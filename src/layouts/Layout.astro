@@ -1,0 +1,62 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --colour-red-ryb: 252, 46, 32;
+    --colour-princeton-orange: 253, 127, 32;
+    --colour-amber: 255, 191, 0;
+    --colour-vivid-sky-blue: 0, 216, 255;
+    --colour-capri: 0, 191, 255;
+    --colour-blue-jeans: 0, 167, 255;
+
+    --accent: var(--colour-red-ryb);
+    --accent-gradient: linear-gradient(
+      90deg,
+      rgb(var(--colour-red-ryb)) 0%,
+      /* rgb(var(--colour-princeton-orange)) calc(16.66% * 2),
+      rgb(var(--colour-amber)) calc(16.66% * 3),
+      rgb(var(--colour-vivid-sky-blue)) calc(16.66% * 4),
+      rgb(var(--colour-capri)) calc(16.66% * 5), */
+        rgb(var(--colour-blue-jeans)) 100%
+    );
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background-color: var(--colour-red-ryb);
+    background-image: var(--accent-gradient);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: "Open Sans", system-ui, sans-serif;
+    min-height: 100vh;
+    min-width: 100vw;
+  }
+</style>
