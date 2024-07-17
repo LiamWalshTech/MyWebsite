@@ -7,11 +7,18 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "nuke": "rm -rf node_modules && rm package-lock.json",
+    "upgrade-interactive": "ncu --interactive",
+    "upgrade-astro": "npx @astrojs/upgrade"
   },
   "dependencies": {
-    "@analytics/google-tag-manager": "^0.5.3",
-    "analytics": "^0.8.1",
-    "astro": "^2.0.2"
+    "@analytics/google-tag-manager": "^0.5.5",
+    "@astrojs/mdx": "^3.1.2",
+    "analytics": "^0.8.13",
+    "astro": "^4.11.6"
+  },
+  "devDependencies": {
+    "npm-check-updates": "^16.14.20"
   }
 }
