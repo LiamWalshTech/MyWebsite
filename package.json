@@ -15,6 +15,7 @@
   "dependencies": {
     "@analytics/google-tag-manager": "^0.5.5",
     "@astrojs/mdx": "^3.1.2",
+    "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.0",
     "analytics": "^0.8.13",
     "astro": "^4.11.6",
