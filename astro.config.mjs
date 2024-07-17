@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.liamwalsh.tech/'
+  integrations: [mdx()],
+  site: 'https://www.liamwalsh.tech/',
 });
