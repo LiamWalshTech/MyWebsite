@@ -6,7 +6,7 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,21 +14,22 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <script>
-      import { Analytics } from "analytics"
-      import googleTagManager from '@analytics/google-tag-manager'
+      import { Analytics } from "analytics";
+      import googleTagManager from "@analytics/google-tag-manager";
 
       const analytics = Analytics({
-        app: 'LiamWalshTech',
+        app: "LiamWalshTech",
         plugins: [
           // @ts-ignore
           googleTagManager({
-            containerId: 'GTM-P6WPM4M'
-          })
-        ]
-      })
+            containerId: "GTM-P6WPM4M",
+          }),
+        ],
+      });
 
-      analytics.page()
+      analytics.page();
     </script>
   </head>
   <body>
