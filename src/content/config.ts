@@ -16,7 +16,29 @@ const newsletterCollection = defineCollection({
     title: z.string(),
   }),
 });
-const projectCollection = defineCollection({ /* ... */ });
+const projectCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    cover: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }),
+    description: z.string(),
+    isDraft: z.boolean(),
+    links: z.object({
+      demo: z.string().url(),
+      repo: z.string().url(),
+      youtube: z.string().url(),
+    }),
+    publishDate: z.date(),
+    tags: z.array(z.string()),
+    thumbnail: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }),
+    title: z.string(),
+  }),
+});
 
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
