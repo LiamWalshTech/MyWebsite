@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-const newsletterEntries = await getCollection("newsletter");
+const newsletterEntries = await getCollection("newsletter", ({ data }) => {
+  return import.meta.env.PROD ? data.isDraft !== true : true;
+});
 ---
 
 <ul>
