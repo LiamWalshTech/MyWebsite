@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+const newsletterEntries = await getCollection("newsletter");
+---
+
+<ul>
+  {
+    newsletterEntries.map((newsletterEntry) => (
+      <li>
+        <a href={`/newsletter/${newsletterEntry.slug}`}>
+          {newsletterEntry.data.title}
+        </a>
+        <time datetime={newsletterEntry.data.publishDate.toISOString()}>
+          {newsletterEntry.data.publishDate.toDateString()}
+        </time>
+      </li>
+    ))
+  }
+</ul>
