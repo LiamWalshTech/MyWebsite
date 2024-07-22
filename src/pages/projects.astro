@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+const projectEntries = await getCollection("project", ({ data }) => {
+  return import.meta.env.PROD ? data.isDraft !== true : true;
+});
+---
+
+<ul>
+  {
+    projectEntries.map((projectEntry) => (
+      <li>
+        <a href={`/project/${projectEntry.slug}`}>{projectEntry.data.title}</a>
+        <time datetime={projectEntry.data.publishDate.toISOString()}>
+          {projectEntry.data.publishDate.toDateString()}
+        </time>
+      </li>
+    ))
+  }
+</ul>
