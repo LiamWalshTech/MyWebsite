@@ -1,19 +1,38 @@
 ---
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+import { formattedPublishDate } from "../utils/formatPublishDate";
+
 const projectEntries = await getCollection("project", ({ data }) => {
   return import.meta.env.PROD ? data.isDraft !== true : true;
 });
 ---
 
-<ul>
-  {
-    projectEntries.map((projectEntry) => (
-      <li>
-        <a href={`/project/${projectEntry.slug}`}>{projectEntry.data.title}</a>
-        <time datetime={projectEntry.data.publishDate.toISOString()}>
-          {projectEntry.data.publishDate.toDateString()}
-        </time>
-      </li>
-    ))
-  }
-</ul>
+<header>
+  <h1>All Projects</h1>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni omnis, rem
+    harum necessitatibus ipsam excepturi, fuga assumenda nesciunt iusto
+    repellendus saepe earum quasi consectetur reprehenderit atque itaque dolore?
+    Perferendis, ab!
+  </p>
+</header>
+
+<main>
+  <ul>
+    {
+      projectEntries.map(({ data: entryData, slug }) => (
+        <li>
+          <Image
+            src={entryData.thumbnail.src}
+            alt={entryData.thumbnail.alt}
+            inferSize={true}
+          />
+          <h2>
+            <a href={`/project/${slug}`}>{entryData.title}</a>
+          </h2>
+        </li>
+      ))
+    }
+  </ul>
+</main>

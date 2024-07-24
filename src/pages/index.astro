@@ -1,27 +1,59 @@
 ---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import { formattedPublishDate } from "../utils/formatPublishDate";
+
+const allNewsletterEntries = await getCollection("newsletter", ({ data }) => {
+  return import.meta.env.PROD ? data.isDraft !== true : true;
+});
+const selectedNewsletterEntries = allNewsletterEntries.slice(0, 3);
 ---
 
 <Layout title="👋 Welcome | Liam Walsh">
-  <main>
-    <h1>Hi 👋 welcome to my site. I'm Liam</h1>
-    <p>Watch this space...</p>
-  </main>
-</Layout>
+  <section>
+    <main>
+      <h1>Mission driven statement</h1>
+      <p>Benefit driven description for the newsletter</p>
+      <!-- Newsletter embed -->
+    </main>
+    <aside>
+      <picture>
+        <source src="https://placebear.com/1800/900" />
+        <img src="https://placebear.com/1800/900" alt="🐻" />
+      </picture>
+    </aside>
+  </section>
 
-<style>
-  main {
-    color: whitesmoke;
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin: auto;
-    max-width: calc(60ch * (1 / 1.5));
-    padding: 1.5rem;
-    text-shadow: -2px -2px 1px rgb(var(--colour-red-ryb));
-  }
-  h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin: 0;
-  }
-</style>
+  <section>
+    <h2>Previous newsletters</h2>
+
+    <ul>
+      {
+        selectedNewsletterEntries.map(({ data: entryData, slug }) => (
+          <li>
+            <Image
+              src={entryData.thumbnail.src}
+              alt={entryData.thumbnail.alt}
+              inferSize={true}
+            />
+            <h2>
+              <a href={`/newsletter/${slug}`}>{entryData.title}</a>
+            </h2>
+            <small>
+              Edition {entryData.edition} -{" "}
+              <time datetime={entryData.publishDate.toISOString()}>
+                {formattedPublishDate(entryData.publishDate)}
+              </time>
+            </small>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section>
+    <h2>Here's how I can help you! 🫵</h2>
+    <!-- YouTube Trailer -->
+  </section>
+</Layout>
