@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
-import Layout from "../../layouts/Newsletter.astro";
+import Layout from "../../layouts/Layout.astro";
 import { formattedPublishDate } from "../../utils/formatPublishDate";
 
 // 1. Generate a new path for every collection entry
@@ -11,7 +11,7 @@ export async function getStaticPaths() {
     return import.meta.env.PROD ? data.isDraft !== true : true;
   });
 
-  return newsletterEntries.map((entry: { slug: any }) => ({
+  return newsletterEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
@@ -31,7 +31,7 @@ const { Content } = await entry.render();
   <section>
     <small>Edition {edition}</small>
     <h1>{title}</h1>
-    <time datetime={publishDate}
+    <time datetime={formattedPublishDate(publishDate)}
       >Published on {formattedPublishDate(publishDate)}</time
     >
     <Image src={thumbnail.src} alt={thumbnail.alt} inferSize={true} />

@@ -1,0 +1,19 @@
+---
+import { socials } from "../constants";
+---
+
+<footer>
+  <main>
+    <h3>Connect with me on</h3>
+    <ul>
+      {
+        socials.map((social) => (
+          <li>
+            <a href={social.link}>{social.platform}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+  <aside></aside>
+</footer>
