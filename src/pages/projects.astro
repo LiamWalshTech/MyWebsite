@@ -1,38 +1,40 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import { formattedPublishDate } from "../utils/formatPublishDate";
+import Layout from "../layouts/Layout.astro";
 
 const projectEntries = await getCollection("project", ({ data }) => {
   return import.meta.env.PROD ? data.isDraft !== true : true;
 });
 ---
 
-<header>
-  <h1>All Projects</h1>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni omnis, rem
-    harum necessitatibus ipsam excepturi, fuga assumenda nesciunt iusto
-    repellendus saepe earum quasi consectetur reprehenderit atque itaque dolore?
-    Perferendis, ab!
-  </p>
-</header>
+<Layout title="All Projects">
+  <header>
+    <h1>All Projects</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni omnis, rem
+      harum necessitatibus ipsam excepturi, fuga assumenda nesciunt iusto
+      repellendus saepe earum quasi consectetur reprehenderit atque itaque
+      dolore? Perferendis, ab!
+    </p>
+  </header>
 
-<main>
-  <ul>
-    {
-      projectEntries.map(({ data: entryData, slug }) => (
-        <li>
-          <Image
-            src={entryData.thumbnail.src}
-            alt={entryData.thumbnail.alt}
-            inferSize={true}
-          />
-          <h2>
-            <a href={`/project/${slug}`}>{entryData.title}</a>
-          </h2>
-        </li>
-      ))
-    }
-  </ul>
-</main>
+  <main>
+    <ul>
+      {
+        projectEntries.map(({ data: entryData, slug }) => (
+          <li>
+            <Image
+              src={entryData.thumbnail.src}
+              alt={entryData.thumbnail.alt}
+              inferSize={true}
+            />
+            <h2>
+              <a href={`/project/${slug}`}>{entryData.title}</a>
+            </h2>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>

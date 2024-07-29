@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+
+import Layout from "../layouts/Layout.astro";
 import { formattedPublishDate } from "../utils/formatPublishDate";
 
 const newsletterEntries = await getCollection("newsletter", ({ data }) => {
@@ -8,37 +10,39 @@ const newsletterEntries = await getCollection("newsletter", ({ data }) => {
 });
 ---
 
-<header>
-  <h1>All Newsletters</h1>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni omnis, rem
-    harum necessitatibus ipsam excepturi, fuga assumenda nesciunt iusto
-    repellendus saepe earum quasi consectetur reprehenderit atque itaque dolore?
-    Perferendis, ab!
-  </p>
-</header>
+<Layout title="All Newsletters">
+  <header>
+    <h1>All Newsletters</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni omnis, rem
+      harum necessitatibus ipsam excepturi, fuga assumenda nesciunt iusto
+      repellendus saepe earum quasi consectetur reprehenderit atque itaque
+      dolore? Perferendis, ab!
+    </p>
+  </header>
 
-<main>
-  <ul>
-    {
-      newsletterEntries.map(({ data: entryData, slug }) => (
-        <li>
-          <Image
-            src={entryData.thumbnail.src}
-            alt={entryData.thumbnail.alt}
-            inferSize={true}
-          />
-          <h2>
-            <a href={`/newsletter/${slug}`}>{entryData.title}</a>
-          </h2>
-          <small>
-            Edition {entryData.edition} -{" "}
-            <time datetime={entryData.publishDate.toISOString()}>
-              {formattedPublishDate(entryData.publishDate)}
-            </time>
-          </small>
-        </li>
-      ))
-    }
-  </ul>
-</main>
+  <main>
+    <ul>
+      {
+        newsletterEntries.map(({ data: entryData, slug }) => (
+          <li>
+            <Image
+              src={entryData.thumbnail.src}
+              alt={entryData.thumbnail.alt}
+              inferSize={true}
+            />
+            <h2>
+              <a href={`/newsletter/${slug}`}>{entryData.title}</a>
+            </h2>
+            <small>
+              Edition {entryData.edition} -{" "}
+              <time datetime={entryData.publishDate.toISOString()}>
+                {formattedPublishDate(entryData.publishDate)}
+              </time>
+            </small>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>

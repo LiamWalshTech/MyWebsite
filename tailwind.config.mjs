@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "selector",
@@ -16,7 +17,28 @@ export default {
         sans: ["Open Sans", "sans-serif"],
         serif: ["Merriweather", "serif"],
       },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            a: {
+              color: theme('colors.pink[800]'),
+              '&:hover': {
+                color: theme('colors.pink[800]'),
+              },
+            },
+            h1: {
+              color: theme('colors.pink[800]'),
+            },
+            h2: {
+              color: theme('colors.pink[800]'),
+            },
+            h3: {
+              color: theme('colors.pink[800]'),
+            },
+          }
+        },
+      }),
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
