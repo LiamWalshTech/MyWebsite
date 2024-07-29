@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "prettier": "npx prettier . --write",
     "nuke": "rm -rf node_modules && rm package-lock.json",
     "upgrade-interactive": "ncu --interactive",
     "upgrade-astro": "npx @astrojs/upgrade"
