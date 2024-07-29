@@ -1,0 +1,17 @@
+<script>
+  import { Analytics } from "analytics";
+  // @ts-expect-error
+  import googleTagManager from "@analytics/google-tag-manager";
+
+  const analytics = Analytics({
+    app: "LiamWalshTech",
+    plugins: [
+      // @ts-ignore
+      googleTagManager({
+        containerId: "GTM-P6WPM4M",
+      }),
+    ],
+  });
+
+  analytics.page();
+</script>

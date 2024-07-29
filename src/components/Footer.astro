@@ -1,0 +1,32 @@
+---
+import { socials } from "../constants";
+---
+
+<footer>
+  <section>
+    <main>
+      <h3>Connect with me on</h3>
+      <ul>
+        {
+          socials.map((social) => (
+            <li>
+              <a href={social.link}>{social.platform}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+    <aside>
+      <!-- TODO: Content -->
+      <h3>Benefit driven proposition...</h3>
+      <!-- TODO: Beehiiv embed -->
+    </aside>
+  </section>
+
+  <section>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/sitemap-index.xml">Sitemap</a></li>
+    </ul>
+  </section>
+</footer>

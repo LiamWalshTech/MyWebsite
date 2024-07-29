@@ -2,8 +2,7 @@
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
-import Layout from "../../layouts/Project.astro";
-import { formattedPublishDate } from "../../utils/formatPublishDate";
+import Layout from "../../layouts/Layout.astro";
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -11,7 +10,7 @@ export async function getStaticPaths() {
     return import.meta.env.PROD ? data.isDraft !== true : true;
   });
 
-  return projectEntries.map((entry: { slug: any }) => ({
+  return projectEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
@@ -21,7 +20,7 @@ export async function getStaticPaths() {
 const {
   entry,
   entry: {
-    data: { cover, description, links, publishDate, tags, thumbnail, title },
+    data: { cover, description, links, tags, title },
   },
 } = Astro.props;
 const { Content } = await entry.render();
