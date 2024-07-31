@@ -1,8 +1,9 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import { formattedPublishDate } from "../utils/formatPublishDate";
+
+import CollectionList from "../components/CollectionList.tsx";
+import NewsletterItem from "../components/NewsletterItem.tsx";
 
 const allNewsletterEntries = await getCollection("newsletter", ({ data }) => {
   return import.meta.env.PROD ? data.isDraft !== true : true;
@@ -12,8 +13,8 @@ const selectedNewsletterEntries = allNewsletterEntries.slice(0, 3);
 
 <Layout title="👋 Welcome | Liam Walsh">
   <section>
-    <main>
-      <h1>Mission driven statement</h1>
+    <main class="space-y-1 p-4">
+      <h1 class="text-3xl font-bold">Mission driven statement</h1>
       <p>Benefit driven description for the newsletter</p>
       <!-- Newsletter embed -->
     </main>
@@ -25,35 +26,17 @@ const selectedNewsletterEntries = allNewsletterEntries.slice(0, 3);
     </aside>
   </section>
 
-  <section>
+  <section class="bg-slate-200 p-4">
     <h2>Previous newsletters</h2>
 
-    <ul>
-      {
-        selectedNewsletterEntries.map(({ data: entryData, slug }) => (
-          <li>
-            <Image
-              src={entryData.thumbnail.src}
-              alt={entryData.thumbnail.alt}
-              inferSize={true}
-            />
-            <h2>
-              <a href={`/newsletter/${slug}`}>{entryData.title}</a>
-            </h2>
-            <small>
-              Edition {entryData.edition} -{" "}
-              <time datetime={entryData.publishDate.toISOString()}>
-                {formattedPublishDate(entryData.publishDate)}
-              </time>
-            </small>
-          </li>
-        ))
-      }
-    </ul>
+    <CollectionList
+      entries={selectedNewsletterEntries}
+      entryComponent={NewsletterItem}
+    />
   </section>
 
-  <section>
-    <h2>Here's how I can help you! 🫵</h2>
+  <section class="p-4 text-center">
+    <h2 class="mb-2 text-2xl font-bold">Here's how I can help you! 🫵</h2>
     <!-- YouTube Trailer -->
   </section>
 </Layout>
