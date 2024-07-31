@@ -5,8 +5,8 @@ import { socials } from "../constants";
 <footer>
   <section class="bg-slate-200 p-4">
     <main>
-      <h3>Connect with me on</h3>
-      <ul>
+      <h3 class="mb-2 text-xl font-bold">Connect with me on</h3>
+      <ul class="space-y-1">
         {
           socials.map((social) => (
             <li>
@@ -16,15 +16,15 @@ import { socials } from "../constants";
         }
       </ul>
     </main>
-    <aside>
+    <aside class="mt-4">
       <!-- TODO: Content -->
-      <h3>Benefit driven proposition...</h3>
+      <h3 class="mb-2 text-xl font-bold">Benefit driven proposition...</h3>
       <!-- TODO: Beehiiv embed -->
     </aside>
   </section>
 
-  <section>
-    <ul>
+  <section class="p-4">
+    <ul class="flex flex-row flex-nowrap justify-center space-x-6">
       <li><a href="/">Home</a></li>
       <li><a href="/sitemap-index.xml">Sitemap</a></li>
     </ul>

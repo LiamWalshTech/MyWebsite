@@ -17,27 +17,6 @@ export default {
         sans: ["Open Sans", "sans-serif"],
         serif: ["Merriweather", "serif"],
       },
-      typography: ({ theme }) => ({
-        DEFAULT: {
-          css: {
-            a: {
-              color: theme('colors.pink[800]'),
-              '&:hover': {
-                color: theme('colors.pink[800]'),
-              },
-            },
-            h1: {
-              color: theme('colors.pink[800]'),
-            },
-            h2: {
-              color: theme('colors.pink[800]'),
-            },
-            h3: {
-              color: theme('colors.pink[800]'),
-            },
-          }
-        },
-      }),
     },
   },
   plugins: [require('@tailwindcss/typography')],
