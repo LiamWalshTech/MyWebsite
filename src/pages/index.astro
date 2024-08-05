@@ -2,8 +2,8 @@
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 
-import CollectionList from "../components/CollectionList.tsx";
-import NewsletterItem from "../components/NewsletterItem.tsx";
+import CollectionList from "../components/CollectionList.astro";
+import NewsletterItem from "../components/NewsletterItem.astro";
 
 const allNewsletterEntries = await getCollection("newsletter", ({ data }) => {
   return import.meta.env.PROD ? data.isDraft !== true : true;
@@ -31,7 +31,7 @@ const selectedNewsletterEntries = allNewsletterEntries.slice(0, 3);
 
     <CollectionList
       entries={selectedNewsletterEntries}
-      entryComponent={NewsletterItem}
+      renderComponent={NewsletterItem}
     />
   </section>
 

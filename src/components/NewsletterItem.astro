@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import type { InferEntrySchema } from "astro:content";
+
+import { formattedPublishDate } from "../utils/formatPublishDate";
+
+interface Props {
+  slug: string;
+  data: InferEntrySchema<"newsletter">;
+}
+
+const {
+  data: { edition, publishDate, thumbnail, title },
+  slug,
+} = Astro.props;
+---
+
+<>
+  <Image src={thumbnail.src} alt={thumbnail.alt} inferSize={true} />
+  <h2>
+    <a href={`/newsletter/${slug}`}>{title}</a>
+  </h2>
+  <small>
+    Edition {edition} -{" "}
+    <time datetime={publishDate.toISOString()}>
+      {formattedPublishDate(publishDate)}
+    </time>
+  </small>
+</>
