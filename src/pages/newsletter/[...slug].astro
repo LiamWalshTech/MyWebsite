@@ -29,15 +29,18 @@ const { Content } = await entry.render();
 
 <Layout title={title}>
   <section>
-    <small>Edition {edition}</small>
-    <h1>{title}</h1>
-    <time datetime={formattedPublishDate(publishDate)}
-      >Published on {formattedPublishDate(publishDate)}</time
-    >
+    <div class="bg-slate-200 p-4">
+      <small class="text-sm opacity-90">Edition {edition}</small>
+      <h1 class="text-3xl font-bold">{title}</h1>
+      <time class="opacity-90" datetime={formattedPublishDate(publishDate)}
+        >Published on {formattedPublishDate(publishDate)}</time
+      >
+    </div>
+
     <Image src={thumbnail.src} alt={thumbnail.alt} inferSize={true} />
   </section>
 
-  <section>
+  <section class="prose p-4">
     <Content />
   </section>
 </Layout>

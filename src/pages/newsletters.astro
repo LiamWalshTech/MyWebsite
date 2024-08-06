@@ -1,9 +1,9 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
+import CollectionList from "../components/CollectionList.astro";
+import NewsletterItem from "../components/NewsletterItem.astro";
 import Layout from "../layouts/Layout.astro";
-import { formattedPublishDate } from "../utils/formatPublishDate";
 
 const newsletterEntries = await getCollection("newsletter", ({ data }) => {
   return import.meta.env.PROD ? data.isDraft !== true : true;
@@ -11,8 +11,8 @@ const newsletterEntries = await getCollection("newsletter", ({ data }) => {
 ---
 
 <Layout title="All Newsletters">
-  <header>
-    <h1>All Newsletters</h1>
+  <header class="space-y-1 p-4">
+    <h1 class="text-3xl font-bold">All Newsletters</h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni omnis, rem
       harum necessitatibus ipsam excepturi, fuga assumenda nesciunt iusto
@@ -21,28 +21,12 @@ const newsletterEntries = await getCollection("newsletter", ({ data }) => {
     </p>
   </header>
 
-  <main>
-    <ul>
-      {
-        newsletterEntries.map(({ data: entryData, slug }) => (
-          <li>
-            <Image
-              src={entryData.thumbnail.src}
-              alt={entryData.thumbnail.alt}
-              inferSize={true}
-            />
-            <h2>
-              <a href={`/newsletter/${slug}`}>{entryData.title}</a>
-            </h2>
-            <small>
-              Edition {entryData.edition} -{" "}
-              <time datetime={entryData.publishDate.toISOString()}>
-                {formattedPublishDate(entryData.publishDate)}
-              </time>
-            </small>
-          </li>
-        ))
-      }
-    </ul>
+  <main class="p-4">
+    <h2 class="mb-2 text-2xl font-semibold">Previous newsletters</h2>
+
+    <CollectionList
+      entries={newsletterEntries}
+      renderComponent={NewsletterItem}
+    />
   </main>
 </Layout>

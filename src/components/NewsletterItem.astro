@@ -15,15 +15,19 @@ const {
 } = Astro.props;
 ---
 
-<>
-  <Image src={thumbnail.src} alt={thumbnail.alt} inferSize={true} />
-  <h2>
-    <a href={`/newsletter/${slug}`}>{title}</a>
-  </h2>
-  <small>
-    Edition {edition} -{" "}
-    <time datetime={publishDate.toISOString()}>
-      {formattedPublishDate(publishDate)}
-    </time>
-  </small>
-</>
+<article class="">
+  <a href={`/newsletter/${slug}`}
+    ><Image src={thumbnail.src} alt={thumbnail.alt} inferSize={true} /></a
+  >
+  <section class="bg-white p-3">
+    <h2 class="text-xl font-semibold">
+      <a href={`/newsletter/${slug}`}>{title}</a>
+    </h2>
+    <small class="text-sm opacity-90">
+      Edition {edition} -{" "}
+      <time datetime={publishDate.toISOString()}>
+        {formattedPublishDate(publishDate)}
+      </time>
+    </small>
+  </section>
+</article>

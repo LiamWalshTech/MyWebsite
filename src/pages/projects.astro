@@ -1,6 +1,8 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+
+import CollectionList from "../components/CollectionList.astro";
+import ProjectItem from "../components/ProjectItem.astro";
 import Layout from "../layouts/Layout.astro";
 
 const projectEntries = await getCollection("project", ({ data }) => {
@@ -9,8 +11,8 @@ const projectEntries = await getCollection("project", ({ data }) => {
 ---
 
 <Layout title="All Projects">
-  <header>
-    <h1>All Projects</h1>
+  <header class="space-y-1 p-4">
+    <h1 class="text-3xl font-bold">All Projects</h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni omnis, rem
       harum necessitatibus ipsam excepturi, fuga assumenda nesciunt iusto
@@ -19,22 +21,9 @@ const projectEntries = await getCollection("project", ({ data }) => {
     </p>
   </header>
 
-  <main>
-    <ul>
-      {
-        projectEntries.map(({ data: entryData, slug }) => (
-          <li>
-            <Image
-              src={entryData.thumbnail.src}
-              alt={entryData.thumbnail.alt}
-              inferSize={true}
-            />
-            <h2>
-              <a href={`/project/${slug}`}>{entryData.title}</a>
-            </h2>
-          </li>
-        ))
-      }
-    </ul>
+  <main class="p-4">
+    <h2 class="mb-2 text-2xl font-semibold">Previous newsletters</h2>
+
+    <CollectionList entries={projectEntries} renderComponent={ProjectItem} />
   </main>
 </Layout>
