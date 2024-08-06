@@ -11,18 +11,20 @@ const projectEntries = await getCollection("project", ({ data }) => {
 ---
 
 <Layout title="All Projects">
-  <header class="space-y-1 p-4">
-    <h1 class="text-3xl font-bold">All Projects</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni omnis, rem
-      harum necessitatibus ipsam excepturi, fuga assumenda nesciunt iusto
-      repellendus saepe earum quasi consectetur reprehenderit atque itaque
-      dolore? Perferendis, ab!
-    </p>
+  <header class="space-y-1 p-4 sm:p-8 lg:mx-auto lg:max-w-screen-xl">
+    <div class="max-w-xl">
+      <h1 class="text-3xl font-bold">All Projects</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni omnis,
+        rem harum necessitatibus ipsam excepturi, fuga assumenda nesciunt iusto
+        repellendus saepe earum quasi consectetur reprehenderit atque itaque
+        dolore? Perferendis, ab!
+      </p>
+    </div>
   </header>
 
-  <main class="p-4">
-    <h2 class="mb-2 text-2xl font-semibold">Previous newsletters</h2>
+  <main class="p-4 sm:p-8 lg:mx-auto lg:max-w-screen-xl">
+    <h2 class="mb-2 text-2xl font-semibold sm:mb-4">Previous newsletters</h2>
 
     <CollectionList entries={projectEntries} renderComponent={ProjectItem} />
   </main>

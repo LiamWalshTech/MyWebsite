@@ -12,8 +12,8 @@ const selectedNewsletterEntries = allNewsletterEntries.slice(0, 3);
 ---
 
 <Layout title="👋 Welcome | Liam Walsh">
-  <section>
-    <main class="space-y-1 p-4">
+  <section class="sm:grid sm:grid-cols-2">
+    <main class="space-y-1 p-4 sm:min-w-80 sm:place-self-center sm:p-8">
       <h1 class="text-3xl font-bold">Mission driven statement</h1>
       <p>Benefit driven description for the newsletter</p>
       <!-- Newsletter embed -->
@@ -26,16 +26,20 @@ const selectedNewsletterEntries = allNewsletterEntries.slice(0, 3);
     </aside>
   </section>
 
-  <section class="bg-slate-200 p-4">
-    <h2 class="mb-2 text-2xl font-semibold">Previous newsletters</h2>
+  <section class="bg-slate-200">
+    <div class="p-4 sm:p-8 lg:mx-auto lg:max-w-screen-xl">
+      <h2 class="mb-2 text-2xl font-semibold sm:mb-4 sm:text-center">
+        Previous newsletters
+      </h2>
 
-    <CollectionList
-      entries={selectedNewsletterEntries}
-      renderComponent={NewsletterItem}
-    />
+      <CollectionList
+        entries={selectedNewsletterEntries}
+        renderComponent={NewsletterItem}
+      />
+    </div>
   </section>
 
-  <section class="p-4 text-center">
+  <section class="p-4 text-center sm:p-8">
     <h2 class="mb-2 text-2xl font-bold">Here's how I can help you! 🫵</h2>
     <!-- YouTube Trailer -->
   </section>

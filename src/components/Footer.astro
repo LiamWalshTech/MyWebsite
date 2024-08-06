@@ -3,25 +3,29 @@ import { socials } from "../constants";
 ---
 
 <footer>
-  <section class="bg-slate-200 p-4">
-    <main>
-      <h3 class="mb-2 text-xl font-bold">Connect with me on</h3>
-      <ul class="space-y-1">
-        {
-          socials.map((social) => (
-            <li>
-              <a href={social.link}>{social.platform}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </main>
-    <aside class="mt-4">
-      <!-- TODO: Content -->
-      <h3 class="mb-2 text-xl font-bold">Benefit driven proposition...</h3>
-      <!-- TODO: Beehiiv embed -->
-    </aside>
-  </section>
+  <div class="bg-slate-200">
+    <section
+      class="space-y-4 p-4 sm:grid sm:grid-cols-2 sm:space-y-0 sm:p-8 lg:mx-auto lg:max-w-screen-xl"
+    >
+      <main>
+        <h3 class="mb-2 text-xl font-bold">Connect with me on</h3>
+        <ul class="space-y-1 sm:flex sm:flex-auto sm:space-x-2 sm:space-y-0">
+          {
+            socials.map((social) => (
+              <li>
+                <a href={social.link}>{social.platform}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </main>
+      <aside>
+        <!-- TODO: Content -->
+        <h3 class="mb-2 text-xl font-bold">Benefit driven proposition...</h3>
+        <!-- TODO: Beehiiv embed -->
+      </aside>
+    </section>
+  </div>
 
   <section class="p-4">
     <ul class="flex flex-row flex-nowrap justify-center space-x-6">

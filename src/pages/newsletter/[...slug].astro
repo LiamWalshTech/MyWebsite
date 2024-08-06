@@ -28,19 +28,23 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={title}>
-  <section>
-    <div class="bg-slate-200 p-4">
+  <section class="bg-slate-200 md:grid md:grid-cols-2">
+    <main class="p-4 sm:p-8 md:self-center lg:ml-auto lg:w-[40rem]">
       <small class="text-sm opacity-90">Edition {edition}</small>
       <h1 class="text-3xl font-bold">{title}</h1>
       <time class="opacity-90" datetime={formattedPublishDate(publishDate)}
         >Published on {formattedPublishDate(publishDate)}</time
       >
-    </div>
+    </main>
 
-    <Image src={thumbnail.src} alt={thumbnail.alt} inferSize={true} />
+    <aside>
+      <Image src={thumbnail.src} alt={thumbnail.alt} inferSize={true} />
+    </aside>
   </section>
 
-  <section class="prose p-4">
-    <Content />
-  </section>
+  <div class="lg:mx-auto lg:max-w-screen-xl">
+    <section class="prose p-4 sm:p-8">
+      <Content />
+    </section>
+  </div>
 </Layout>
