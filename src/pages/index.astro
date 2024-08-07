@@ -1,8 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "../layouts/Layout.astro";
 
+import Layout from "../layouts/Layout.astro";
 import CollectionList from "../components/CollectionList.astro";
+import NewsletterForm from "../components/NewsletterForm";
 import NewsletterItem from "../components/NewsletterItem.astro";
 
 const allNewsletterEntries = await getCollection("newsletter", ({ data }) => {
@@ -13,10 +14,10 @@ const selectedNewsletterEntries = allNewsletterEntries.slice(0, 3);
 
 <Layout title="👋 Welcome | Liam Walsh">
   <section class="sm:grid sm:grid-cols-2">
-    <main class="space-y-1 p-4 sm:min-w-80 sm:place-self-center sm:p-8">
+    <main class="space-y-2 p-4 sm:min-w-80 sm:place-self-center sm:p-8">
       <h1 class="text-3xl font-bold">Mission driven statement</h1>
       <p>Benefit driven description for the newsletter</p>
-      <!-- Newsletter embed -->
+      <NewsletterForm />
     </main>
     <aside>
       <picture>
