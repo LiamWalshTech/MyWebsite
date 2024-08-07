@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type AllowedCollectionEntries = CollectionEntry<"newsletter" | "project">;
+
+interface Props {
+  entries: Array<AllowedCollectionEntries>;
+  // HACK: This is not right
+  renderComponent: (props: any) => React.ReactNode;
+}
+
+const { entries, renderComponent: RenderComponent } = Astro.props;
+---
+
+<ul
+  class="space-y-3 sm:grid sm:grid-cols-2 sm:gap-3 sm:space-y-0 lg:grid-cols-3"
+>
+  {
+    entries.map((entry) => (
+      <li>
+        <RenderComponent {...entry} />
+      </li>
+    ))
+  }
+</ul>

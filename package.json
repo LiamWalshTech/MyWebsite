@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "prettier": "npx prettier . --write",
     "nuke": "rm -rf node_modules && rm package-lock.json",
     "upgrade-interactive": "ncu --interactive",
     "upgrade-astro": "npx @astrojs/upgrade"
@@ -15,14 +16,23 @@
   "dependencies": {
     "@analytics/google-tag-manager": "^0.5.5",
     "@astrojs/mdx": "^3.1.2",
+    "@astrojs/react": "^3.6.1",
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "analytics": "^0.8.13",
     "astro": "^4.11.6",
     "dayjs": "^1.11.12",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.6"
   },
   "devDependencies": {
-    "npm-check-updates": "^16.14.20"
+    "@tailwindcss/typography": "^0.5.13",
+    "npm-check-updates": "^16.14.20",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.5"
   }
 }

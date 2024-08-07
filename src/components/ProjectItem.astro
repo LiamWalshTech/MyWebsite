@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import type { InferEntrySchema } from "astro:content";
+
+interface Props {
+  slug: string;
+  data: InferEntrySchema<"project">;
+}
+
+const {
+  data: { links, thumbnail, title },
+  slug,
+} = Astro.props;
+---
+
+<article class="">
+  <a href={`/project/${slug}`}
+    ><Image src={thumbnail.src} alt={thumbnail.alt} inferSize={true} /></a
+  >
+  <section class="bg-white p-3">
+    <h2 class="mb-3 text-xl font-semibold">
+      <a href={`/project/${slug}`}>{title}</a>
+    </h2>
+    <small class="text-sm opacity-90">
+      <ul class="grid grid-cols-2 gap-2">
+        <li>
+          <a
+            class="block bg-slate-200 p-2 text-center font-semibold"
+            href={links.repo}>GitHub Repo</a
+          >
+        </li>
+        <li>
+          <a
+            class="block bg-slate-200 p-2 text-center font-semibold"
+            href={links.youtube}>YouTube Tutorial</a
+          >
+        </li>
+        <li class="col-span-2">
+          <a
+            class="block bg-slate-200 p-2 text-center font-semibold"
+            href={links.demo}>View Demo</a
+          >
+        </li>
+      </ul>
+    </small>
+  </section>
+</article>

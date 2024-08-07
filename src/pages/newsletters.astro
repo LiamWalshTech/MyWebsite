@@ -1,44 +1,34 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import { formattedPublishDate } from "../utils/formatPublishDate";
+
+import CollectionList from "../components/CollectionList.astro";
+import NewsletterItem from "../components/NewsletterItem.astro";
+import Layout from "../layouts/Layout.astro";
 
 const newsletterEntries = await getCollection("newsletter", ({ data }) => {
   return import.meta.env.PROD ? data.isDraft !== true : true;
 });
 ---
 
-<header>
-  <h1>All Newsletters</h1>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni omnis, rem
-    harum necessitatibus ipsam excepturi, fuga assumenda nesciunt iusto
-    repellendus saepe earum quasi consectetur reprehenderit atque itaque dolore?
-    Perferendis, ab!
-  </p>
-</header>
+<Layout title="All Newsletters">
+  <header class="space-y-1 p-4 sm:p-8 lg:mx-auto lg:max-w-screen-xl">
+    <div class="max-w-xl">
+      <h1 class="text-3xl font-bold">All Newsletters</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni omnis,
+        rem harum necessitatibus ipsam excepturi, fuga assumenda nesciunt iusto
+        repellendus saepe earum quasi consectetur reprehenderit atque itaque
+        dolore? Perferendis, ab!
+      </p>
+    </div>
+  </header>
 
-<main>
-  <ul>
-    {
-      newsletterEntries.map(({ data: entryData, slug }) => (
-        <li>
-          <Image
-            src={entryData.thumbnail.src}
-            alt={entryData.thumbnail.alt}
-            inferSize={true}
-          />
-          <h2>
-            <a href={`/newsletter/${slug}`}>{entryData.title}</a>
-          </h2>
-          <small>
-            Edition {entryData.edition} -{" "}
-            <time datetime={entryData.publishDate.toISOString()}>
-              {formattedPublishDate(entryData.publishDate)}
-            </time>
-          </small>
-        </li>
-      ))
-    }
-  </ul>
-</main>
+  <main class="p-4 sm:p-8 lg:mx-auto lg:max-w-screen-xl">
+    <h2 class="mb-2 text-2xl font-semibold sm:mb-4">Previous newsletters</h2>
+
+    <CollectionList
+      entries={newsletterEntries}
+      renderComponent={NewsletterItem}
+    />
+  </main>
+</Layout>
