@@ -1,11 +1,71 @@
 ---
+import NewsletterForm from "../components/NewsletterForm";
+import YouTubeTrailer from "../components/YouTubeTrailer";
 import Page from "../layouts/Page.astro";
 ---
 
-<Page title="About Me">
+<Page
+  description="I'm Liam Walsh, a software engineer, Badminton fanatic and journey obsessed individual helping other developers reach their potential."
+  metaTitle="Who's Liam Walsh?"
+  title="Hi, I'm Liam. I help software engineers reach their full potential"
+>
+  <h2>My story so far</h2>
+
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum animi harum
-    ratione officiis, quisquam explicabo iste autem, sapiente, quo hic
-    reiciendis quia distinctio. Dolores ipsam nulla cumque qui nihil aliquid.
+    I've always loved using and playing on computers. Ever since asking Jeeves
+    for help with beating Tomb Raider 2's final boss I've been drawn to
+    computers and the internet like nothing else
   </p>
+
+  <p>
+    I studied computing at college and university. My final year project was to
+    build a chess forum with the overarching concept of viewers and spectators
+    inspired by the movie "Becoming John Malkovich". It was an awful hacked
+    toether mess of PHP, HTML tables and dodgy CSS but I loved every second of
+    making it.
+  </p>
+
+  <p>what sort of tech and companies I've worked with</p>
+
+  <p></p>
+
+  <p>my wake up call in 2018</p>
+
+  <p></p>
+
+  <p>what I do now (link to now page)</p>
+
+  <p></p>
+
+  <hr />
+
+  <h2>What I write about</h2>
+
+  <h3>Software Engineering</h3>
+  <p>
+    React, Next.js, Tailwind, Javascript, Typescript, Workflow, Teams, Career
+  </p>
+
+  <h3>Personal Growth</h3>
+  <p>
+    Self improvement, challenges, mindset, motivation, productivity,
+    consistency, flow and stoicism
+  </p>
+
+  <h3>Health and Fitness</h3>
+
+  <h3>Wealth</h3>
+
+  <hr />
+
+  <h2>Let me help you reach the next level</h2>
+  <p>Sign up to the newsletter and start</p>
+  <NewsletterForm />
+
+  <hr />
+
+  <h2>Not much of a reader? I make videos too 👇</h2>
+  <div class="mx-auto lg:max-w-5xl">
+    <YouTubeTrailer />
+  </div>
 </Page>
