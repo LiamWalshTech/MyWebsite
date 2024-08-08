@@ -3,6 +3,12 @@ import Footer from "../components/Footer.astro";
 import GoogleTagManager from "../components/GoogleTagManager.astro";
 import Header from "../components/Header.astro";
 import MetaTags from "../components/MetaTags.astro";
+import fullMetaTitle from "../utils/fullMetaTitle";
+
+export interface Props {
+  description: string;
+  title: string;
+}
 
 const { description, title } = Astro.props;
 ---
@@ -10,7 +16,7 @@ const { description, title } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <MetaTags description={description} title={title} />
+    <MetaTags description={description} title={fullMetaTitle(title)} />
     <GoogleTagManager />
   </head>
   <body>
