@@ -1,5 +1,7 @@
 ---
 import Page from "../layouts/Page.astro";
+
+import { socials } from "../constants";
 ---
 
 <Page
@@ -11,16 +13,18 @@ import Page from "../layouts/Page.astro";
 
   <ul>
     <li>
-      <!-- TODO: Come back to this link for dynamic -->
-      At <a href="https://www.linkedin.com/in/liam-walsh-tech/">Awaze 🏘️</a>
+      At <a href={socials.linkedin.link}>Awaze 🏘️</a> as a Senior Software Engineer.
     </li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li>
+      This website! Come and <a
+        href="https://youtube.com/playlist?list=PLhi2pqhV9aVTatTQGdxlilrAGY1DDbWYl&si=c6G_o7MgBKD-7SAz"
+        >watch the streams 👆</a
+      >
+    </li>
+    <li>
+      <a href="/newsletters">My newsletter</a>, the first editions will be
+      coming out soon.
+    </li>
   </ul>
 
   <footer>

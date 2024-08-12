@@ -1,12 +1,13 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import { getCollection } from "astro:content";
 
-import Layout from "../layouts/Layout.astro";
+import heroImage from "./hero.jpg";
 import CollectionList from "../components/CollectionList.astro";
 import NewsletterForm from "../components/NewsletterForm";
 import NewsletterItem from "../components/NewsletterItem.astro";
 import YouTubeTrailer from "../components/YouTubeTrailer";
+import Layout from "../layouts/Layout.astro";
 
 const allNewsletterEntries = await getCollection("newsletter", ({ data }) => {
   return import.meta.env.PROD ? data.isDraft !== true : true;
@@ -22,25 +23,21 @@ const selectedNewsletterEntries = allNewsletterEntries.slice(0, 3);
     <main
       class="prose p-4 sm:min-w-80 sm:place-self-center sm:p-8 lg:ml-auto lg:w-[40rem] lg:max-w-full"
     >
-      <h1>
-        <!-- Secrets for healthier, wealthier, long term developers -->
-        Knowledge for the healthier, wealthier, long term developers
-        <!-- Wisdom for the healthier, wealthier, happier developer
-        Weekly developer learnings that will save you time, money and your sanity -->
-      </h1>
+      <h1>Knowledge for the healthier, wealthier, long term developers</h1>
       <p>
-        A weekly newsletter for software engineers/developers that want to grow.
-        I share my past successes and failures so you can get a head of the
-        rest.
+        Sign up to my weekly newsletter for software engineers/developers that
+        want to grow. I share my past successes and failures so you can get a
+        head of the rest.
       </p>
       <NewsletterForm />
     </main>
-    <aside>
-      <Image
-        class="md:h-full md:w-full md:object-cover md:object-center"
-        src={"https://placebear.com/1800/900"}
+    <aside class="">
+      <Picture
+        class="aspect-square h-full w-full object-cover object-center 2xl:aspect-video"
+        src={heroImage}
         alt={"🐻"}
-        inferSize={true}
+        widths={[640, 768, 1024]}
+        sizes="(max-width: 640px) 640px, (max-width: 768px) 768px, 1024px"
       />
     </aside>
   </section>
