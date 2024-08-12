@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
+import NewsletterForm from "../../components/NewsletterForm";
 import Layout from "../../layouts/Layout.astro";
 import { formattedPublishDate } from "../../utils/formatPublishDate";
 
@@ -42,9 +43,23 @@ const { Content } = await entry.render();
     </aside>
   </section>
 
-  <div class="lg:mx-auto lg:max-w-screen-xl">
+  <div
+    class="md:grid md:grid-cols-2 md:items-start lg:mx-auto lg:max-w-screen-xl"
+  >
     <section class="prose p-4 sm:p-8">
       <Content />
+    </section>
+
+    <section
+      class="prose m-4 space-y-2 bg-slate-200 p-8 sm:m-8 md:sticky md:top-8"
+    >
+      <h3>Knowledge for the healthier, wealthier, long term developers</h3>
+      <p>
+        Sign up to my weekly newsletter for software engineers/developers that
+        want to grow. I share my past successes and failures so you can get a
+        head of the rest.
+      </p>
+      <NewsletterForm />
     </section>
   </div>
 </Layout>

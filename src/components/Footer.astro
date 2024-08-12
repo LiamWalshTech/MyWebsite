@@ -1,5 +1,6 @@
 ---
-import { socials } from "../constants";
+import { socialsArray } from "../constants";
+import NewsletterForm from "./NewsletterForm";
 ---
 
 <footer>
@@ -11,18 +12,20 @@ import { socials } from "../constants";
         <h3 class="mb-2 text-xl font-bold">Connect with me on</h3>
         <ul class="space-y-1 sm:flex sm:flex-auto sm:space-x-2 sm:space-y-0">
           {
-            socials.map((social) => (
+            socialsArray.map((social) => (
               <li>
-                <a href={social.link}>{social.platform}</a>
+                <a href={social.link}>{social.platformName}</a>
               </li>
             ))
           }
         </ul>
       </main>
       <aside>
-        <!-- TODO: Content -->
-        <h3 class="mb-2 text-xl font-bold">Benefit driven proposition...</h3>
-        <!-- TODO: Beehiiv embed -->
+        <h3 class="mb-2 text-xl font-bold">
+          Free weekly newsletter for the the healthier, wealthier, long term
+          developers
+        </h3>
+        <NewsletterForm />
       </aside>
     </section>
   </div>
@@ -31,6 +34,9 @@ import { socials } from "../constants";
     <ul class="flex flex-row flex-nowrap justify-center space-x-6">
       <li><a class="font-semibold" href="/">Home</a></li>
       <li><a class="font-semibold" href="/sitemap-index.xml">Sitemap</a></li>
+      <li class="font-semibold italic">
+        ©️ {new Date().getFullYear()} Walsh Ventures LTD
+      </li>
     </ul>
   </section>
 </footer>

@@ -1,14 +1,17 @@
-export const socials = [
-  {
-    platform: "YouTube",
-    link: "https://www.youtube.com/@LiamWalshTech",
+export const socials = {
+  github: {
+    platformName: "GitHub",
+    link: "https://github.com/LiamWalshTech",
   },
-  {
-    platform: "Twitter",
-    link: "https://x.com/LiamWalshTech",
-  },
-  {
-    platform: "LinkedIn",
+  linkedin: {
+    platformName: "LinkedIn",
     link: "https://www.linkedin.com/in/liam-walsh-tech/",
   },
-];
+  twitter: { platformName: "Twitter", link: "https://x.com/LiamWalshTech" },
+  youtube: {
+    platformName: "YouTube",
+    link: "https://www.youtube.com/@LiamWalshTech",
+  },
+} as const;
+
+export const socialsArray = Object.values(socials);

@@ -1,9 +1,13 @@
 ---
+import { Picture } from "astro:assets";
 import { getCollection } from "astro:content";
-import Layout from "../layouts/Layout.astro";
 
+import heroImage from "./hero.jpg";
 import CollectionList from "../components/CollectionList.astro";
+import NewsletterForm from "../components/NewsletterForm";
 import NewsletterItem from "../components/NewsletterItem.astro";
+import YouTubeTrailer from "../components/YouTubeTrailer";
+import Layout from "../layouts/Layout.astro";
 
 const allNewsletterEntries = await getCollection("newsletter", ({ data }) => {
   return import.meta.env.PROD ? data.isDraft !== true : true;
@@ -11,18 +15,30 @@ const allNewsletterEntries = await getCollection("newsletter", ({ data }) => {
 const selectedNewsletterEntries = allNewsletterEntries.slice(0, 3);
 ---
 
-<Layout title="👋 Welcome | Liam Walsh">
+<Layout
+  description="Helping software engineers reach the next level"
+  title="👋 Welcome | Liam Walsh"
+>
   <section class="sm:grid sm:grid-cols-2">
-    <main class="space-y-1 p-4 sm:min-w-80 sm:place-self-center sm:p-8">
-      <h1 class="text-3xl font-bold">Mission driven statement</h1>
-      <p>Benefit driven description for the newsletter</p>
-      <!-- Newsletter embed -->
+    <main
+      class="prose p-4 sm:min-w-80 sm:place-self-center sm:p-8 lg:ml-auto lg:w-[40rem] lg:max-w-full"
+    >
+      <h1>Knowledge for the healthier, wealthier, long term developers</h1>
+      <p>
+        Sign up to my weekly newsletter for software engineers/developers that
+        want to grow. I share my past successes and failures so you can get a
+        head of the rest.
+      </p>
+      <NewsletterForm />
     </main>
-    <aside>
-      <picture>
-        <source src="https://placebear.com/1800/900" />
-        <img src="https://placebear.com/1800/900" alt="🐻" />
-      </picture>
+    <aside class="">
+      <Picture
+        class="aspect-square h-full w-full object-cover object-center 2xl:aspect-video"
+        src={heroImage}
+        alt={"🐻"}
+        widths={[640, 768, 1024]}
+        sizes="(max-width: 640px) 640px, (max-width: 768px) 768px, 1024px"
+      />
     </aside>
   </section>
 
@@ -41,6 +57,8 @@ const selectedNewsletterEntries = allNewsletterEntries.slice(0, 3);
 
   <section class="p-4 text-center sm:p-8">
     <h2 class="mb-2 text-2xl font-bold">Here's how I can help you! 🫵</h2>
-    <!-- YouTube Trailer -->
+    <div class="mx-auto lg:max-w-5xl">
+      <YouTubeTrailer />
+    </div>
   </section>
 </Layout>

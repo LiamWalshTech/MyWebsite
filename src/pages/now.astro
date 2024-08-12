@@ -1,7 +1,37 @@
 ---
 import Page from "../layouts/Page.astro";
+
+import { socials } from "../constants";
 ---
 
-<Page title="Now">
-  <p>What I'm working on right now. Last updated ...</p>
+<Page
+  description="This page explains what I'm working on right now."
+  metaTitle="What I'm Doing Now"
+  title="What I'm Doing Now"
+>
+  <h2>I'm currently working:</h2>
+
+  <ul>
+    <li>
+      At <a href={socials.linkedin.link}>Awaze 🏘️</a> as a Senior Software Engineer.
+    </li>
+    <li>
+      This website! Come and <a
+        href="https://youtube.com/playlist?list=PLhi2pqhV9aVTatTQGdxlilrAGY1DDbWYl&si=c6G_o7MgBKD-7SAz"
+        >watch the streams 👆</a
+      >
+    </li>
+    <li>
+      <a href="/newsletters">My newsletter</a>, the first editions will be
+      coming out soon.
+    </li>
+  </ul>
+
+  <footer>
+    <small
+      >This page is inspired by the <strong>Now</strong> idea from <a
+        href="https://nownownow.com/about">Derek Sivers</a
+      >.</small
+    >
+  </footer>
 </Page>

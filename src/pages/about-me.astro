@@ -1,11 +1,114 @@
 ---
+import NewsletterForm from "../components/NewsletterForm";
+import YouTubeTrailer from "../components/YouTubeTrailer";
 import Page from "../layouts/Page.astro";
 ---
 
-<Page title="About Me">
+<Page
+  description="I'm Liam Walsh, a software engineer, Badminton fanatic and journey obsessed individual helping other developers reach their potential."
+  metaTitle="Who's Liam Walsh?"
+  title="Hi, I'm Liam. I help software engineers reach their full potential"
+>
+  <h2>My story so far</h2>
+
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum animi harum
-    ratione officiis, quisquam explicabo iste autem, sapiente, quo hic
-    reiciendis quia distinctio. Dolores ipsam nulla cumque qui nihil aliquid.
+    I've always loved using and playing on computers. Ever since asking Jeeves
+    for help with beating Tomb Raider 2's final boss I've been drawn to
+    computers and the internet like nothing else.
   </p>
+
+  <p>
+    I studied computing at college and university. My final year project was to
+    build a chess forum with the overarching concept of viewers and spectators
+    inspired by the movie "Becoming John Malkovich". It was an awful hacked
+    toether mess of PHP, HTML tables and dodgy CSS but I loved every second of
+    making it.
+  </p>
+
+  <p>
+    I've been in the industry over 13 years. I've worked in-house roles for
+    eccomerce, digital agencies and software engineering product teams. These
+    roles have allowed my to work with various companies including BAFTA,
+    ClearChannel, Sainsbury's, Cottages.com, Hoseasons, Novasol and so on.
+  </p>
+
+  <p>
+    I've worked with various languages and technology stacks over the years but
+    my speciality and greater experience is in UI/UX and Front End. I've been
+    lucky to enjoy working with such projects and brands. I was really
+    comfortable with my abilities to deliver web based proucts effectively.
+  </p>
+
+  <p>
+    But in 2018 I had the biggest wakeup call of my life. My son was born and
+    during the lead up to his arrival till now I have been on a new mission. To
+    find people who can benefit from my experience and journey the most. To be
+    able to help them along their journey and hopefully achieve the goals they
+    dream about.
+  </p>
+
+  <p>
+    I can no longer spend all my time for my own benefit. I see my son and see
+    how far I have come and want, need and have to give back to those who need
+    it.
+  </p>
+
+  <p>
+    So now I'm starting my personal brand, sharing my experience and knowledge
+    through content in various formats. Building, learning, reading, teaching
+    and building a community of like-minded individuals who wish to become the
+    best version of themselves.
+  </p>
+
+  <p>
+    You can check out exactly what I'm working on right now on my <a href="/now"
+      >now page</a
+    >. I update this every week with my current progress with various projects
+  </p>
+
+  <hr />
+
+  <h2>What I write about</h2>
+
+  <h3>Software Engineering</h3>
+  <p>
+    Learn about various languages, frameworks and working practices. Benefit
+    from career advice based on my past experience and advice from successful
+    individuals I talk to.
+  </p>
+
+  <h3>Personal Growth</h3>
+  <p>
+    Consistent and purposeful progress is what you should strive for everyday.
+    My content around self improvement, mindset, productivity and stoicism will
+    help you attain these. Learn from my successes and failures as I take on
+    various challenges and document the journey.
+  </p>
+
+  <h3>Health and Fitness</h3>
+  <p>
+    I believe having a healthy body is the highest priority before everything
+    else. Without health there can be nothing else. Let me show you how I got
+    back to a healthy life, body and mind after falling off more than three
+    times!
+  </p>
+
+  <h3>Wealth</h3>
+  <p>
+    I'm not financial expert but I've learned a lot about wealth (clue, it's not
+    about how much money you have) over the years. I've made plenty of mistakes
+    but also had a lot of wins that have gave us lasting benefits.
+  </p>
+
+  <hr />
+
+  <h2>Let me help you reach the next level</h2>
+  <NewsletterForm />
+
+  <hr />
+
+  <h2>Not much of a reader? I make videos too 👇</h2>
+  <div class="mx-auto lg:max-w-5xl">
+    <YouTubeTrailer />
+  </div>
 </Page>
