@@ -81,11 +81,9 @@ export default {
     extend: {
       colors: {
         primary: colourPalette.picton_blue.DEFAULT,
-        "primary-alt": colourPalette.deep_sky_blue.DEFAULT,
         secondary: colourPalette.candy_apple_red.DEFAULT,
-        "secondary-alt": colourPalette.safety_orange.DEFAULT,
         accent: colourPalette.amber.DEFAULT,
-        background: colourPalette.vivid_sky_blue.DEFAULT,
+        background: colourPalette.picton_blue.DEFAULT,
         text: "#050315",
       },
       fontFamily: {

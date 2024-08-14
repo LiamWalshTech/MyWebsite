@@ -6,7 +6,7 @@ import NewsletterForm from "./NewsletterForm";
 <footer>
   <div class="bg-background">
     <section
-      class="space-y-4 p-4 sm:grid sm:grid-cols-2 sm:space-y-0 sm:p-8 lg:mx-auto lg:max-w-screen-xl"
+      class="space-y-4 p-8 sm:grid sm:grid-cols-2 sm:space-y-0 sm:p-12 lg:mx-auto lg:max-w-screen-xl"
     >
       <main>
         <h3 class="mb-2 text-xl font-bold">Connect with me on</h3>
@@ -30,13 +30,14 @@ import NewsletterForm from "./NewsletterForm";
     </section>
   </div>
 
-  <section class="p-4">
+  <section class="space-y-4 p-8 text-center">
     <ul class="flex flex-row flex-nowrap justify-center space-x-6">
       <li><a class="font-semibold" href="/">Home</a></li>
       <li><a class="font-semibold" href="/sitemap-index.xml">Sitemap</a></li>
-      <li class="font-semibold italic">
-        ©️ {new Date().getFullYear()} Walsh Ventures LTD
-      </li>
     </ul>
+
+    <p class="font-semibold italic">
+      ©️ {new Date().getFullYear()} Walsh Ventures LTD
+    </p>
   </section>
 </footer>
