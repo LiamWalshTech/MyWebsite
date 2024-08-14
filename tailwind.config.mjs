@@ -80,12 +80,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: colourPalette["Picton Blue"],
-        "primary-alt": colourPalette["Deep Sky Blue"],
-        secondary: colourPalette["Candy apple red"],
-        "secondary-alt": colourPalette["Safety orange"],
-        accent: colourPalette["Amber"],
-        background: colourPalette["Vivid sky blue"],
+        primary: colourPalette.picton_blue.DEFAULT,
+        "primary-alt": colourPalette.deep_sky_blue.DEFAULT,
+        secondary: colourPalette.candy_apple_red.DEFAULT,
+        "secondary-alt": colourPalette.safety_orange.DEFAULT,
+        accent: colourPalette.amber.DEFAULT,
+        background: colourPalette.vivid_sky_blue.DEFAULT,
         text: "#050315",
       },
       fontFamily: {

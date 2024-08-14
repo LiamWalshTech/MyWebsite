@@ -8,5 +8,5 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   integrations: [mdx(), tailwind(), sitemap(), react()],
-  site: "https://www.liamwalsh.tech/"
+  site: "https://www.liamwalsh.tech/",
 });
