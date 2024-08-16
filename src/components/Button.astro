@@ -1,0 +1,26 @@
+---
+interface Props {
+  fullWidth?: boolean;
+  href?: string;
+  theme?: "accent" | "youtube";
+}
+
+const { fullWidth, href, theme = "accent" } = Astro.props;
+
+const themeMap = {
+  accent: "bg-accent rounded block p-2",
+  github: "bg-slate-400 rounded block p-2",
+  youtube: "bg-youtube rounded block p-2",
+} as const;
+const themeClasses = `${themeMap[theme]} text-center font-semibold ${fullWidth && "w-full"}`;
+---
+
+{
+  href ? (
+    <a class={themeClasses} href={href}>
+      GitHub Repo
+    </a>
+  ) : (
+    <button class={themeClasses}>GitHub Repo</button>
+  )
+}

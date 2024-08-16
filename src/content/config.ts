@@ -8,6 +8,7 @@ const articleCollection = defineCollection({
 const newsletterCollection = defineCollection({
   type: "content",
   schema: z.object({
+    description: z.string(),
     edition: z.number(),
     isDraft: z.boolean(),
     publishDate: z.date(),

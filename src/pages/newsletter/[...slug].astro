@@ -22,18 +22,20 @@ export async function getStaticPaths() {
 const {
   entry,
   entry: {
-    data: { edition, publishDate, thumbnail, title },
+    data: { description, edition, publishDate, thumbnail, title },
   },
 } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={title}>
-  <section class="bg-slate-200 md:grid md:grid-cols-2">
-    <main class="p-4 sm:p-8 md:self-center lg:ml-auto lg:w-[40rem]">
-      <small class="text-sm opacity-90">Edition {edition}</small>
-      <h1 class="text-3xl font-bold">{title}</h1>
-      <time class="opacity-90" datetime={formattedPublishDate(publishDate)}
+<Layout description={description} title={title}>
+  <section class="bg-background md:grid md:grid-cols-2">
+    <main class="p-8 sm:p-12 md:self-center lg:ml-auto lg:w-[40rem]">
+      <small class="text-sm opacity-90 lg:text-lg">Edition {edition}</small>
+      <h1 class="text-3xl font-bold lg:text-5xl">{title}</h1>
+      <time
+        class="text-sm opacity-90 lg:text-lg"
+        datetime={formattedPublishDate(publishDate)}
         >Published on {formattedPublishDate(publishDate)}</time
       >
     </main>
@@ -46,12 +48,12 @@ const { Content } = await entry.render();
   <div
     class="md:grid md:grid-cols-2 md:items-start lg:mx-auto lg:max-w-screen-xl"
   >
-    <section class="prose p-4 sm:p-8">
+    <section class="prose p-8 sm:p-12">
       <Content />
     </section>
 
     <section
-      class="prose m-4 space-y-2 bg-slate-200 p-8 sm:m-8 md:sticky md:top-8"
+      class="prose m-8 space-y-2 bg-background p-8 sm:m-12 md:sticky md:top-8"
     >
       <h3>Knowledge for the healthier, wealthier, long term developers</h3>
       <p>

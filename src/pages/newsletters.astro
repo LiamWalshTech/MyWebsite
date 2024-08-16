@@ -12,7 +12,7 @@ const newsletterEntries = await getCollection("newsletter", ({ data }) => {
 
 <Layout description="" title="All Newsletters">
   <div class="lg:mx-auto lg:max-w-screen-xl">
-    <header class="prose p-4 sm:p-8">
+    <header class="prose p-8 sm:p-12">
       <h1>All Newsletters</h1>
       <p>
         A free newsletter every Saturday morning where I share my knowledge and
@@ -22,8 +22,8 @@ const newsletterEntries = await getCollection("newsletter", ({ data }) => {
     </header>
   </div>
 
-  <main class="p-4 sm:p-8 lg:mx-auto lg:max-w-screen-xl">
-    <h2 class="mb-2 text-2xl font-semibold sm:mb-4">Previous newsletters</h2>
+  <main class="p-8 sm:p-12 lg:mx-auto lg:max-w-screen-xl">
+    <h2 class="mb-4 text-2xl font-semibold sm:mb-8">Previous newsletters</h2>
 
     <CollectionList
       entries={newsletterEntries}

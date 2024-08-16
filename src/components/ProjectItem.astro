@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import type { InferEntrySchema } from "astro:content";
+import Button from "./Button.astro";
 
 interface Props {
   slug: string;
@@ -24,22 +25,16 @@ const {
     <small class="text-sm opacity-90">
       <ul class="grid grid-cols-2 gap-2">
         <li>
-          <a
-            class="block bg-slate-200 p-2 text-center font-semibold"
-            href={links.repo}>GitHub Repo</a
+          <Button href={links.repo} theme="github" fullWidth>GitHub Repo</Button
           >
         </li>
         <li>
-          <a
-            class="block bg-slate-200 p-2 text-center font-semibold"
-            href={links.youtube}>YouTube Tutorial</a
+          <Button href={links.youtube} theme="youtube" fullWidth
+            >YouTube Tutorial</Button
           >
         </li>
         <li class="col-span-2">
-          <a
-            class="block bg-slate-200 p-2 text-center font-semibold"
-            href={links.demo}>View Demo</a
-          >
+          <Button href={links.demo} fullWidth>View Demo</Button>
         </li>
       </ul>
     </small>
