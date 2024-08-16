@@ -73,6 +73,15 @@ const colourPalette = {
   },
 };
 
+const extendedColours = {
+  primary: colourPalette.picton_blue.DEFAULT,
+  secondary: colourPalette.deep_sky_blue.DEFAULT,
+  accent: colourPalette.amber.DEFAULT,
+  contrast: colourPalette.candy_apple_red.DEFAULT,
+  background: colourPalette.deep_sky_blue.DEFAULT,
+  text: '#050315'
+}
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -80,15 +89,35 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: colourPalette.picton_blue.DEFAULT,
-        secondary: colourPalette.candy_apple_red.DEFAULT,
-        accent: colourPalette.amber.DEFAULT,
-        background: colourPalette.picton_blue.DEFAULT,
-        text: "#050315",
+        primary: extendedColours.primary,
+        secondary: extendedColours.secondary,
+        accent: extendedColours.accent,
+        background: extendedColours.background,
+        contrast: extendedColours.contrast,
+        github: "#333",
+        linkedin: "#0077b5",
+        twitter: "#1da1f2",
+        youtube: "#ff0000",
       },
       fontFamily: {
         sans: ["Open Sans", "sans-serif"],
         serif: ["Merriweather", "serif"],
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: extendedColours.text,
+            '[class~="lead"], strong, dt, h1, h2, h3, h4, thead th': {
+              color: extendedColours.text,
+            },
+            a: {
+              color: extendedColours.secondary,
+              '&:hover': {
+                color: extendedColours.accent,
+              },
+            },
+          },
+        },
       },
     },
   },

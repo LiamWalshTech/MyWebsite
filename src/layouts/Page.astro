@@ -24,12 +24,12 @@ const { description, metaTitle, title } = Astro.props;
     <Header />
 
     <article>
-      <header class="bg-primary p-4 sm:p-8 lg:p-10">
+      <header class="bg-primary p-8 sm:p-12 lg:p-10 lg:py-20">
         <div class="prose mx-auto text-center">
           <h1>{title}</h1>
         </div>
       </header>
-      <main class="prose mx-auto p-4 sm:p-8">
+      <main class="prose mx-auto p-8 sm:p-12">
         <slot />
       </main>
     </article>

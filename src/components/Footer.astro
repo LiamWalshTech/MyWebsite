@@ -6,22 +6,27 @@ import NewsletterForm from "./NewsletterForm";
 <footer>
   <div class="bg-background">
     <section
-      class="space-y-4 p-8 sm:grid sm:grid-cols-2 sm:space-y-0 sm:p-12 lg:mx-auto lg:max-w-screen-xl"
+      class="space-y-8 p-8 sm:grid sm:grid-cols-2 sm:space-y-0 sm:p-12 lg:mx-auto lg:max-w-screen-xl"
     >
       <main>
-        <h3 class="mb-2 text-xl font-bold">Connect with me on</h3>
-        <ul class="space-y-1 sm:flex sm:flex-auto sm:space-x-2 sm:space-y-0">
+        <h3 class="mb-4 text-xl font-bold">Connect with me on</h3>
+        <ul class="flex flex-wrap gap-2">
           {
             socialsArray.map((social) => (
               <li>
-                <a href={social.link}>{social.platformName}</a>
+                <a
+                  class="inline-block rounded-lg bg-accent px-3 py-2"
+                  href={social.link}
+                >
+                  {social.platformName} {social.icon}
+                </a>
               </li>
             ))
           }
         </ul>
       </main>
       <aside>
-        <h3 class="mb-2 max-w-md text-xl font-bold">
+        <h3 class="mb-4 max-w-md text-xl font-bold">
           Free weekly newsletter for the the healthier, wealthier, long term
           developers
         </h3>

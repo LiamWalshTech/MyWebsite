@@ -12,7 +12,7 @@ const projectEntries = await getCollection("project", ({ data }) => {
 
 <Layout description="" title="All Projects">
   <div class="lg:mx-auto lg:max-w-screen-xl">
-    <header class="prose p-4 sm:p-8">
+    <header class="prose p-8 sm:p-12">
       <h1>All My Projects</h1>
       <p>
         Here's a full list of all the projects I've built. They're all open
@@ -24,8 +24,8 @@ const projectEntries = await getCollection("project", ({ data }) => {
     </header>
   </div>
 
-  <main class="p-4 sm:p-8 lg:mx-auto lg:max-w-screen-xl">
-    <h2 class="mb-2 text-2xl font-semibold sm:mb-4">Previous newsletters</h2>
+  <main class="p-8 sm:p-12 lg:mx-auto lg:max-w-screen-xl">
+    <h2 class="mb-4 text-2xl font-semibold sm:mb-8">Previous newsletters</h2>
 
     <CollectionList entries={projectEntries} renderComponent={ProjectItem} />
   </main>
