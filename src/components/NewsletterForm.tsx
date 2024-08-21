@@ -3,7 +3,7 @@ const NewsletterForm = () => (
     <iframe
       src="https://embeds.beehiiv.com/29f498bc-c783-4992-abfc-d5c2691af81c?slim=true"
       data-test-id="beehiiv-embed"
-      height="52"
+      height="74"
       width="100%"
       style={{
         margin: 0,
