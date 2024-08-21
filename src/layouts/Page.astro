@@ -13,6 +13,7 @@ export interface Props {
 }
 
 const { description, image, metaTitle, title } = Astro.props;
+const fullPageUrl = `${Astro.site}${Astro.url.pathname}`;
 ---
 
 <!doctype html>
@@ -21,7 +22,7 @@ const { description, image, metaTitle, title } = Astro.props;
     <MetaTags
       description={description}
       title={fullMetaTitle(metaTitle)}
-      pageUrl={Astro.url.pathname}
+      pageUrl={fullPageUrl}
       image={image}
     />
     <GoogleTagManager />
