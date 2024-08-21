@@ -2,7 +2,7 @@
 interface Props {
   fullWidth?: boolean;
   href?: string;
-  theme?: "accent" | "youtube";
+  theme?: "accent" | "github" | "youtube";
 }
 
 const { fullWidth, href, theme = "accent" } = Astro.props;
@@ -18,9 +18,9 @@ const themeClasses = `${themeMap[theme]} text-center font-semibold ${fullWidth &
 {
   href ? (
     <a class={themeClasses} href={href}>
-      GitHub Repo
+      <slot />
     </a>
   ) : (
-    <button class={themeClasses}>GitHub Repo</button>
+    <button class={themeClasses}><slot /></button>
   )
 }

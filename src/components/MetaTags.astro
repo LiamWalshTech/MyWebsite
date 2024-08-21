@@ -1,19 +1,72 @@
 ---
+import { getImage } from "astro:assets";
+
+import faviconSrc from "../images/favicon.png";
+import faviconSvgSrc from "../images/favicon.svg";
+
 export interface Props {
+  author?: string;
   description: string;
+  image?: ImageMetadata | undefined;
+  pageUrl: string;
   title: string;
 }
 
-const { description, title } = Astro.props;
+const {
+  author = "Liam Walsh",
+  description,
+  image,
+  pageUrl,
+  title,
+} = Astro.props;
+
+const appleTouchIcon = await getImage({
+  src: faviconSrc,
+  width: 180,
+  height: 180,
+  format: "png",
+});
+const faviconSvg = await getImage({ src: faviconSvgSrc, format: "svg" });
+const imageUrl = image ? image.src : false;
 ---
 
+<!-- HTML Meta -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<!-- Content Meta -->
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href={faviconSvg.src} type="image/svg+xml" />
+<link rel="apple-touch-icon" href={appleTouchIcon.src} />
+<link rel="manifest" href="/manifest.json" />
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>
 <meta name="description" content={description} />
+
+<!-- Social Meta -->
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content={title} />
+<meta itemprop="description" content={description} />
+<meta itemprop="image" content="" />
+<meta name="author" content={author} />
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content={pageUrl} />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+{imageUrl && <meta property="og:image" content={imageUrl} />}
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{imageUrl && <meta name="twitter:image" content={imageUrl} />}
+
+<!-- Sitemap -->
 <link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link

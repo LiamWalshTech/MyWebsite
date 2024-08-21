@@ -5,8 +5,6 @@ const NewsletterForm = () => (
       data-test-id="beehiiv-embed"
       height="52"
       width="100%"
-      frameBorder="0"
-      scrolling="no"
       style={{
         margin: 0,
         borderRadius: "0px !important",

@@ -2,12 +2,13 @@
 import { Picture } from "astro:assets";
 import { getCollection } from "astro:content";
 
-import heroImage from "./hero.jpg";
+import heroImage from "../images/hero.jpg";
 import CollectionList from "../components/CollectionList.astro";
 import NewsletterForm from "../components/NewsletterForm";
 import NewsletterItem from "../components/NewsletterItem.astro";
 import YouTubeTrailer from "../components/YouTubeTrailer";
 import Layout from "../layouts/Layout.astro";
+import { SITE_CONFIG } from "../constants";
 
 const allNewsletterEntries = await getCollection("newsletter", ({ data }) => {
   return import.meta.env.PROD ? data.isDraft !== true : true;
@@ -15,10 +16,7 @@ const allNewsletterEntries = await getCollection("newsletter", ({ data }) => {
 const selectedNewsletterEntries = allNewsletterEntries.slice(0, 3);
 ---
 
-<Layout
-  description="Helping software engineers reach the next level"
-  title="👋 Welcome | Liam Walsh"
->
+<Layout description={SITE_CONFIG.description} image={heroImage} title={SITE_CONFIG.title}>
   <section class="sm:grid sm:grid-cols-2">
     <main
       class="prose p-8 sm:min-w-80 sm:place-self-center sm:p-12 lg:ml-auto lg:w-[40rem] lg:max-w-full"

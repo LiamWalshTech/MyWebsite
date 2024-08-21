@@ -1,4 +1,9 @@
-export const socials = {
+export const SITE_CONFIG = {
+  title: "👋 Welcome | Liam Walsh",
+  description: "Helping software engineers reach the next level",
+};
+
+export const SOCIALS = {
   github: {
     icon: "🤖",
     platformName: "GitHub",
@@ -21,4 +26,4 @@ export const socials = {
   },
 } as const;
 
-export const socialsArray = Object.values(socials);
+export const SOCIALS_ARRAY = Object.values(SOCIALS);

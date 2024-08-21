@@ -7,16 +7,22 @@ import fullMetaTitle from "../utils/fullMetaTitle";
 
 export interface Props {
   description: string;
+  image?: ImageMetadata;
   title: string;
 }
 
-const { description, title } = Astro.props;
+const { description, image, title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <MetaTags description={description} title={fullMetaTitle(title)} />
+    <MetaTags
+      description={description}
+      title={fullMetaTitle(title)}
+      pageUrl={Astro.url.pathname}
+      image={image}
+    />
     <GoogleTagManager />
   </head>
   <body>
