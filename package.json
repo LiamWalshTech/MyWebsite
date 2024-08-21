@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@analytics/google-tag-manager": "^0.5.5",
+    "@astrojs/check": "^0.9.3",
     "@astrojs/mdx": "^3.1.2",
     "@astrojs/react": "^3.6.1",
     "@astrojs/sitemap": "^3.1.6",
@@ -24,11 +25,14 @@
     "@types/react-dom": "^18.3.0",
     "analytics": "^0.8.13",
     "astro": "^4.11.6",
+    "astro-robots-txt": "^1.0.0",
     "dayjs": "^1.11.12",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sharp": "^0.33.4",
-    "tailwindcss": "^3.4.6"
+    "sharp-ico": "^0.1.5",
+    "tailwindcss": "^3.4.6",
+    "typescript": "^5.5.4"
   },
   "devDependencies": {
     "npm-check-updates": "^16.14.20",

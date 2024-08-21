@@ -1,5 +1,5 @@
 ---
-import { socialsArray } from "../constants";
+import { SOCIALS_ARRAY } from "../constants";
 import NewsletterForm from "./NewsletterForm";
 ---
 
@@ -12,7 +12,7 @@ import NewsletterForm from "./NewsletterForm";
         <h3 class="mb-4 text-xl font-bold">Connect with me on</h3>
         <ul class="flex flex-wrap gap-2">
           {
-            socialsArray.map((social) => (
+            SOCIALS_ARRAY.map((social) => (
               <li>
                 <a
                   class="inline-block rounded-lg bg-accent px-3 py-2"
@@ -44,5 +44,25 @@ import NewsletterForm from "./NewsletterForm";
     <p class="font-semibold italic">
       ©️ {new Date().getFullYear()} Walsh Ventures LTD
     </p>
+
+    <div class="mx-auto">
+      <a
+        class="inline-block"
+        href="https://dashboard.simpleanalytics.com/liamwalsh.tech?utm_source=liamwalsh.tech&utm_content=badge"
+        referrerpolicy="origin"
+        target="_blank"
+        ><picture
+          ><source
+            srcset="https://simpleanalyticsbadges.com/liamwalsh.tech?mode=dark"
+            media="(prefers-color-scheme: dark)"
+          /><img
+            src="https://simpleanalyticsbadges.com/liamwalsh.tech?mode=light"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+            crossorigin="anonymous"
+          /></picture
+        ></a
+      >
+    </div>
   </section>
 </footer>
