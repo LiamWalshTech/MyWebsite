@@ -7,10 +7,12 @@ const NewsletterForm = () => (
       height="74"
       width="100%"
       style={{
-        margin: 0,
         borderRadius: "0px !important",
         backgroundColor: "transparent",
+        margin: 0,
+        overflow: "hidden !important"
       }}
+      loading="lazy"
     ></iframe>
   </div>
 );
