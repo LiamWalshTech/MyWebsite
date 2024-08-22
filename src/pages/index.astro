@@ -27,15 +27,16 @@ const selectedNewsletterEntries = allNewsletterEntries.slice(0, 3);
         want to grow. I share my past successes and failures so you can get a
         head of the rest.
       </p>
-      <NewsletterForm />
+      <NewsletterForm loading="eager" />
     </main>
     <aside>
       <Picture
         class="aspect-square h-full w-full object-cover object-center 2xl:aspect-video"
         src={heroImage}
         alt={"🐻"}
-        widths={[640, 768, 1024]}
-        sizes="(max-width: 640px) 640px, (max-width: 768px) 768px, 1024px"
+        widths={[412, 640, 1024]}
+        sizes="412px, (min-width: 640px) 640px, (min-width: 768px) 1024px"
+        loading="eager"
       />
     </aside>
   </section>
