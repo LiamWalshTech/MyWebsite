@@ -1,4 +1,8 @@
-const NewsletterForm = () => (
+interface Props {
+  loading?: 'eager' | 'lazy'
+}
+
+const NewsletterForm = ({loading = 'lazy'}: Props) => (
   <div className="max-w-md">
     <iframe
       src="https://embeds.beehiiv.com/29f498bc-c783-4992-abfc-d5c2691af81c?slim=true"
@@ -12,7 +16,7 @@ const NewsletterForm = () => (
         margin: 0,
         overflow: "hidden !important"
       }}
-      loading="lazy"
+      loading={loading}
     ></iframe>
   </div>
 );
