@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import type { InferEntrySchema } from "astro:content";
 
 import { formattedPublishDate } from "../utils/formatPublishDate";
+import { getSrcImage } from "../utils/getSrcImage";
 
 interface Props {
   slug: string;
@@ -13,11 +14,12 @@ const {
   data: { edition, publishDate, thumbnail, title },
   slug,
 } = Astro.props;
+const thumbnailImage = await getSrcImage(thumbnail.src)
 ---
 
 <article class="">
   <a href={`/newsletter/${slug}`}
-    ><Image src={thumbnail.src} alt={thumbnail.alt} inferSize={true} /></a
+    ><Image src={thumbnailImage} alt={thumbnail.alt} /></a
   >
   <section class="bg-white p-3">
     <h2 class="text-xl font-semibold">
