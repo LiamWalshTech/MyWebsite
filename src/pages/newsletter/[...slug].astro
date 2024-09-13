@@ -5,6 +5,7 @@ import { getCollection } from "astro:content";
 import NewsletterForm from "../../components/NewsletterForm";
 import Layout from "../../layouts/Layout.astro";
 import { formattedPublishDate } from "../../utils/formatPublishDate";
+import { getSrcImage } from "../../utils/getSrcImage";
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -26,6 +27,7 @@ const {
   },
 } = Astro.props;
 const { Content } = await entry.render();
+const thumbnailImage = await getSrcImage(thumbnail.src)
 ---
 
 <Layout description={description} title={title}>
@@ -41,7 +43,7 @@ const { Content } = await entry.render();
     </main>
 
     <aside>
-      <Image src={thumbnail.src} alt={thumbnail.alt} inferSize={true} />
+      <Image src={thumbnailImage} alt={thumbnail.alt} />
     </aside>
   </section>
 
