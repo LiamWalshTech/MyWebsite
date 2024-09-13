@@ -30,7 +30,7 @@ const { Content } = await entry.render();
 const thumbnailImage = await getSrcImage(thumbnail.src)
 ---
 
-<Layout description={description} title={title}>
+<Layout description={description} image={thumbnailImage} title={title}>
   <section class="bg-background md:grid md:grid-cols-2">
     <main class="p-8 sm:p-12 md:self-center lg:ml-auto lg:w-[40rem]">
       <small class="text-sm opacity-90 lg:text-lg">Edition {edition}</small>
