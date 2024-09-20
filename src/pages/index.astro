@@ -13,7 +13,9 @@ import { SITE_CONFIG } from "../constants";
 const allNewsletterEntries = await getCollection("newsletter", ({ data }) => {
   return import.meta.env.PROD ? data.isDraft !== true : true;
 });
-const selectedNewsletterEntries = allNewsletterEntries.slice(0, 3);
+const selectedNewsletterEntries = allNewsletterEntries
+  .slice(0, 3)
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 ---
 
 <Layout

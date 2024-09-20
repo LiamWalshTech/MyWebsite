@@ -8,6 +8,9 @@ import Layout from "../layouts/Layout.astro";
 const newsletterEntries = await getCollection("newsletter", ({ data }) => {
   return import.meta.env.PROD ? data.isDraft !== true : true;
 });
+newsletterEntries.sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+);
 ---
 
 <Layout description="" title="All Newsletters">
