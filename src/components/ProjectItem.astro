@@ -13,12 +13,12 @@ const {
   data: { links, thumbnail, title },
   slug,
 } = Astro.props;
-const thumbnailImage = await getSrcImage(thumbnail.src)
+const thumbnailImage = await getSrcImage(thumbnail.src);
 ---
 
 <article class="">
   <a href={`/project/${slug}`}
-    ><Image src={thumbnailImage} alt={thumbnail.alt}  /></a
+    ><Image src={thumbnailImage} alt={thumbnail.alt} /></a
   >
   <section class="bg-white p-3">
     <h2 class="mb-3 text-xl font-semibold">

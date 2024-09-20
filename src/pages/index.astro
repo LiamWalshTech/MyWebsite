@@ -16,7 +16,11 @@ const allNewsletterEntries = await getCollection("newsletter", ({ data }) => {
 const selectedNewsletterEntries = allNewsletterEntries.slice(0, 3);
 ---
 
-<Layout description={SITE_CONFIG.description} image={heroImage} title={SITE_CONFIG.title}>
+<Layout
+  description={SITE_CONFIG.description}
+  image={heroImage}
+  title={SITE_CONFIG.title}
+>
   <section class="sm:grid sm:grid-cols-2">
     <main
       class="prose p-8 sm:min-w-80 sm:place-self-center sm:p-12 lg:ml-auto lg:w-[40rem] lg:max-w-full"

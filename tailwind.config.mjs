@@ -79,8 +79,8 @@ const extendedColours = {
   accent: colourPalette.amber.DEFAULT,
   contrast: colourPalette.candy_apple_red.DEFAULT,
   background: colourPalette.deep_sky_blue.DEFAULT,
-  text: '#050315'
-}
+  text: "#050315",
+};
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -112,7 +112,7 @@ export default {
             },
             a: {
               color: extendedColours.secondary,
-              '&:hover': {
+              "&:hover": {
                 color: extendedColours.accent,
               },
             },

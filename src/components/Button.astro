@@ -21,6 +21,8 @@ const themeClasses = `${themeMap[theme]} text-center font-semibold ${fullWidth &
       <slot />
     </a>
   ) : (
-    <button class={themeClasses}><slot /></button>
+    <button class={themeClasses}>
+      <slot />
+    </button>
   )
 }

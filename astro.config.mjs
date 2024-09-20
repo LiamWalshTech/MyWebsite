@@ -11,6 +11,6 @@ export default defineConfig({
   integrations: [mdx(), tailwind(), sitemap(), react(), robotsTxt()],
   site: "https://www.liamwalsh.tech",
   devToolbar: {
-    enabled: false
-  }
+    enabled: false,
+  },
 });

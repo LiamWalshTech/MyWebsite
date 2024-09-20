@@ -27,7 +27,7 @@ const {
   },
 } = Astro.props;
 const { Content } = await entry.render();
-const thumbnailImage = await getSrcImage(thumbnail.src)
+const thumbnailImage = await getSrcImage(thumbnail.src);
 ---
 
 <Layout description={description} image={thumbnailImage} title={title}>
