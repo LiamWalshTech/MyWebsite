@@ -1,0 +1,459 @@
+---
+description: Today I'm going to share with you 30 things I learned about programming and software engineering in the last 12 years. I really wish I knew these when I was 20 and just starting out.
+edition: 5
+isDraft: false
+publishDate: 2024-10-12
+thumbnail:
+  src: /src/images/newsletter/newsletter-edition-5.jpg
+  alt: Our mistakes become our best lessons but they're the most time inefficient way to learn.
+title: "30 Programming Truths I know at 30 that I wish I knew at 20"
+---
+
+Today I'm going to share with you 30 things I learned about programming and software engineering in the last 12 years. I really wish I knew these when I was 20 and just starting out.
+
+It's great to learn from your own mistakes but it's even greater to learn from somebody else's. It's like stealing somebody else's 10,000 hour investment. You save all that time and get the knowledge without the pain.
+
+Some people in their 20s will never think to look around and find just one person who's done what they've want to do and achieved what they want to achieve. They could save so many hours by talking to that one person.
+
+> Our mistakes become our best lessons but they're the most time inefficient way to learn.
+
+So today we're going to cover:
+
+- Programming tips
+- Fundamental lessons
+- Experienced tricks of the trade
+- Truths and revelations
+
+So if you want to save 10,000 hours of frustration, struggle and pain the keep reading.
+
+### 1. Watch out for long chain dependencies
+
+That meme about `node_modules` folder being the heaviest object in the universe is true and for one reason. Long dependency chains.
+
+Dependencies are like a tower of cards. You knock one out and they all come tumbling down.
+
+Be wary when packages have deeply nested dependencies. And don't fall into the same trap of creating packages or modules that stack up on one another.
+
+### 2. You should learn multiple languages
+
+I started off with PHP, HTML, JavaScript and CSS. As plain and bog standard as you can get. I didn't really jump onto using more languages until probably 3-4 years into working as a web developer.
+
+By that point I was so comfortable with what I knew that I struggled to try anything else. It felt like starting from scratch.
+
+This was a mistake because those languages trapped me in an area of development with no awareness of what I could be missing from other languages and even job opportunities.
+
+### 3. Always check for truthy values
+
+Always avoid double negatives and almost always check for truthy values.
+
+Reading code where you're checking for truthy values is always easier.
+
+If you have to use a negative naming on a variable (like `isNotPizza`) then never pair it with a logical not comparison. This creates a double negative which is cognitively hard to reason.
+
+<blockquote class="twitter-tweet">
+  <p lang="en" dir="ltr">
+    Avoid negative names for boolean variables!
+    <br />
+    <br />
+    By negating them you will have double negatives which are confusing to read,
+    resulting in a higher cognitive mental load.
+    <br />
+    <br />
+    Which one is more readable?
+    <br />- isStarted
+    <br />- !isNotStarted{" "}
+    <a href="https://t.co/tMfLEwuRL6">pic.twitter.com/tMfLEwuRL6</a>
+  </p>
+  &mdash; Daniel Moka⚡ (@dmokafa){" "}
+  <a href="https://twitter.com/dmokafa/status/1394291622402215941?ref_src=twsrc%5Etfw">
+    May 17, 2021
+  </a>
+</blockquote> <script
+  async
+  src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"
+></script>
+
+### 4. The language you start with doesn't matter
+
+I already mentioned what I started with. Some people would argue and say to start with something else but in truth it doesn't matter what you start with as long as you start with something.
+
+Do a little bit of research into what you want to build or what area of development you work in. Make an educated choice and then pick up the language and move on.
+
+You're not bound to any one language and learning your first language makes learning the next much easier.
+
+### 5. Practice data manipulation, especially arrays!
+
+The majority of programming software revolves around moving data from one place to another. Manipulating, shaping and trimming along the way.
+
+So get really good at shaping and understanding data structures.
+
+In particular get really good with arrays. They're in every language and will be the most common type you'll work with.
+
+Most of the time will be sorting, filtering and trimming data that's stored in an array.
+
+### 6. Master your tools
+
+Speed and efficiency trump the latest and greatest.
+
+There is no point using the latest language/framework if it takes you 2-3 times longer to get the same task done in a stack you're more familiar with.
+
+Software requirements change. In this high speed world being able to deliver quality quickly matters.
+
+### 7. Get really comfortable with typing
+
+This one might change in the future with AI tools and voice control improving for a lot of software. But for now we're all mostly typing.
+
+If you're getting long uninterrupted blocks of time for coding then you'll simply get more done by being able to type quickly and accurately.
+
+It's what we spend the majority of our time doing so it makes sense to practice typing in general.
+
+Find a keyboard that's comfortable for you to use and really get cosy with it. Look at things like Vim and Vim motions for better code navigation without having to reach for the mouse. Have fun with something like [Monkey Type](https://monkeytype.com/).
+
+### 8. Embrace your curiosity
+
+Follow the spark of curiosty.
+
+Lots of people will tell you to go this way or that, learn this thing or that thing, take this career path or that.
+
+Instead, listen to your mind. What do you think about when all is quiet with nobody around? What blog or Twitter post caught your eye?
+
+Follow these trails of curious thought and then dive deeper.
+
+Genuine curiosity will lead you into places others simply won't go because it doesn't spark the same feeling and that's where you can shine. In the place where you are intrinsically drawn to.
+
+### 9. Avoid the else if pattern
+
+Avoid `else if` like the plague. It's a verbose and creates a strict, linear form of logic that could be made simpler with something like a `switch` statement.
+
+Sometimes they can be combined into groups and have simple stand alone `if` statements and then a final default return at the end of the function.
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/Zmx0Ou5TNJs?si=F7Dc2rSyACzhbU8Q"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+  className="aspect-video w-full"
+  loading="lazy"
+></iframe>
+
+### 10. Try both a scripting language and compiled language
+
+They both have different strengths, they both have different weaknesses.
+
+They both behave differently and it's best try at least one of each so you get a feel of how different they can be. And where they're similar.
+
+The workflows tend to be different between the two so you might find one suits your style and what you value more than the other.
+
+### 11. Try both OOP and Functional programming
+
+Two paradigms, very different approach to how code is written and behaves.
+
+Like the last point they both have strengths and weaknesses.
+
+People can get very zealous about these two things so it's best to at least try both and understand how they work in practice.
+
+I was brought up with OOP but found that I much preferred the data flow with functional and found it easier to test as well.
+
+Try both and broaden your horizons.
+
+### 12. Don't abstract too early
+
+Abstracting something too early in development can lead you down a path that could be difficult to come back on.
+
+When you find yourself in a situation where you could abstract something consider these few questions:
+
+- Do I know the majority of the cases where this abstraction will be used?
+- Does the abstraction make sense not just to me but anyone else?
+- Is this abstraction valuable or is it simply hiding messy code?
+
+If you're not sure on any of these questions then you might want to reconsider.
+
+### 13. Forget DRY and try DAMP
+
+Most developers swear by this one but there's one problem with it.
+
+We repeat ourselves all the time.
+
+It's a very concrete statement, don't repeat yourself, that assumers forever right? The problem is it needs a bit more nuance then that.
+
+There are times when repeating yourself is fine. If we abstracted or extracted every piece of code we used twice we'd never stop.
+
+A good rule of thumb I found is this:
+"Have I coded this same logic at least 3 times? Can it be tested easily? Are there any special cases where I'm using this?"
+
+It forces you to think more about the abstraction and whether it's valuable to abstract it or not. Bad abstractions can create unwanted coupling and complexity.
+
+### 14. Work on communication skills early
+
+This is a big one that can limit your ability to progress in your career.
+
+The further up the career ladder you go the more important this skill becomes. Because your duties and responsibilities expand and you're work becomes more about leadership, mentoring and guiding practices and principles in your engineering team and environment.
+
+You'll need to communicate with people from all parts of the business and adjust accordingly. If you can't communicate simply and effectively then you'll struggle to build confidence for yourself and the team.
+
+### 15. Use the rubber duck!
+
+This vital piece of equipment could make or break a difficult problem you face. Ok it's not vital to have an actual duck, you can get the same effect by yourself or with another person. But make sure to use this technique.
+
+Rubber duck debugging has been widely documented as an effective way of being able to break down problems when you're struggling.
+
+The basic principle is to explain the problem, out loud preferably, to the duck.
+
+Stepping through the problem with the duck makes you analyse the problem from a different perspective. And communicating clearly and precisely is a skill in itself. This will test whether you fully understand the problem or not.
+
+Go grab one of these bad boys so you can pass!!!
+
+### 16. If the duck fails then take a walk
+
+Sometimes, not even the almighty Gandulk can save us! If that's the case then getting up and going for a walk could be the answer.
+
+Everyone's heard of Steve Job's famous walking meetings. There's plenty of science that explains the benefits of walking and I try to get a daily walk in each day for at least 45 minutes.
+
+Read more about it [here](https://www.liamwalsh.tech/newsletter/daily-walks/) from one of my other newsletters. Or watch below one of my YouTube videos.
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/Om2n4SbQwAc?si=TOx9NbMseBCPkfsi"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+  className="aspect-video w-full"
+  loading="lazy"
+></iframe>
+
+Whenever I've been stuck on a programming problem and debugging it out with the duck, aloud or someone else I often find that getting up and walking away from the computer for about 5-10 minutes will yield the answer I need.
+
+It's a combination of movement and getting our eyes away from the screen that enables our brain to process in a different way. Get up from the desk more.
+
+### 17. Be a lifelong learner
+
+You never become a master of anything. Nobody ever goes to the grave completing everything in a given topic.
+
+There is always more to learn.
+
+Embrace being a life long learner.
+
+The goal is not to complete your training and then sail along happily ever after. The goal and the game is to constantly imporive, constabntly leanr and grow.
+
+It will be a lot easier if you embrace this and enjoy the process. Don't see it as extra work.
+
+Life is work!
+
+The most enjoyable parts of your life happen when you're engrossed in a deep state of work and flow. Enjoy the learning.
+
+If you struggle to enjoy what you're studying then try something else. Your intrinsic curiosity will guide you to something that feels like play but work to others.
+
+### 18. Write more
+
+It's a core skill for life. There's not a single profession or vocation in this world that isn't improved by being able to write better.
+
+It isn't just being able to write better for the sake of it. It's what comes from writing itself.
+
+Writing is clarifying understanding.
+
+It's an incredible tool for learning. One of the most powerful tools you have for learning, discovery, communication and collaboration.
+
+And specifically for programming it helps with writing documentation, pull request reviews and readability of code. Speaking of which.
+
+### 19. Get good at naming
+
+The two hardest things in programming are:
+
+- Cache invalidation
+- Naming things
+  Make a real effort to work on the second one.
+
+Naming things well is the difference between code people happily work with, maintain and grow and code that people can't follow, update or understand.
+
+Keeping naming simple and readable. For example, use adjectives to describe variables intent so you don't need to look at what the variable has in it you simply know what it's being used for.
+
+```
+const isLoading
+const hasLoaded
+const willLoad
+```
+
+### 20. KISS
+
+Keep, it, simple, stupid.
+
+A widely used phrase in programming.
+
+Simple is hard to achieve sometimes but it's important to think things through properly and break things down so we can make them simple.
+
+Simple does not mean easy. Simple is an art, one that's difficult to achieve.
+
+Avoid getting dragged into needless complexity, it's the death of software.
+
+The more complexity you introduce the more chances create for your code to fail. Strive for simple.
+
+### 21. Use comments in your code as a last resort
+
+Apart from documentation for packages, libraries and modules I really do think commenting your code is unnecessary.
+
+Don't feel the need to comment every line of code.
+
+Good engineers can understand what code does by following it's path, reading the variable name (if named well) and essentially the code become the documentation.
+
+If something is particularly complicated and it's not obvious how to make it simpler, or if it's usage is confusing, then do reach for the comments but use it sparingly.
+
+### 22. Study with materials, learn with projects
+
+We gather and collate knowledge by reading, listening and watching. We learn through implementing, creating and action.
+
+Don't' get stuck in tutorial hell. You'll learn nothing.
+
+Once you've studied some information. Test yourself on it, use it, make something.
+
+Programming is a skill, a craft, a creative outlet. And you simply don't learn through passive activities.
+
+There's a great video by Python Programmer below that explains how creating is the highest form of learning.
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/WDKxPAEcdVk?si=jEmhHgwwQ1jjGoe4&amp;start=363"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+  className="aspect-video w-full"
+  loading="lazy"
+></iframe>
+
+### 23. Start with small projects that peak your curiosity and then work up
+
+It's easy to see what people make online and get a bit of jealousy. Or it might be desire, excitement, whatever you feel when you see someone creating something that looks great.
+
+But when we're starting out it's better to start off with smaller problems and projects and work up.
+
+Seeing something through to completion is a skill in itself and if you tackle something too big too early you'll struggle to complete it.
+
+If you're curious about building something then try and pick off a feature of functionality to can implement on it's own. End-to-end and you can learn all the ins-and-outs with greater depth.
+
+### 24. Write your code in long format... to start with
+
+This might sound weird but for some programming languages I think it's a good idea to write things in a long hand format.
+
+For example, in CSS there are properties like `padding`, `margin`, `border-radius` etc that have separate properties encapsulated in one.
+
+If you write out the long handed way with each property defined individually then you'll understand all the things that property captures. Some of which you might not have known or understood without doing so.
+
+### 25. Build a framework/package
+
+If you find yourself using the same copy paste code between projects then try to go a step further and write it up as a separate package or module.
+
+If you want to understand how React.js or Vue.js really work then try and replicate some of their functionality in your own framework.
+
+There's a big difference in the code we produce for ourselves and our teams and creating something that can we distributed, shared and used through open source.
+
+It will teach you invaluable lessons about coding.
+
+### 26. Build a CLI tool
+
+This one can be really fun. We spend a lot of our time in terminal tools and we use a lot of things through the terminal.
+
+Build something you can use that improves your workflow and something simply for fun.
+
+It's a very different experience then writing most software you do day-to-day.
+
+It can be a really exciting talking point to have with other developers as well.
+
+### 27. Get friendly with logging
+
+Monitoring and observability of systems is vital for production software.
+
+You need to be comfortable with implementing logging mechanisms but also comfortable with reading logs, accessing logs in various ways and debugging using logs.
+
+They're your window into what's happening in your applications and give your visibility to potential problems ahead of time,
+
+### 28. Handle your errors explicitly
+
+Some langauges do this better than others. But if you know a potential error could occur then make sure to handle it explicitly.
+
+Some languages force this like Go but languages like JavaScript will fail for many reasons but give no clues as to where errors could occur.
+
+If you know something might fails then cater for that.
+
+### 29. Use the debugger
+
+Everyone uses `console.log`, `print`, `echo`, whatever it may be, to debug our code.
+
+But using an actual debugger will give you more insights into what happening in your code, where and in what order thing are happening.
+
+They're not hard to use once you understand what it is that they're doing and learn the basic controls.
+
+They improve your ability to debug code massively.
+
+### 30. Get comfortable not knowing
+
+A lot time during programming you're going to feel lost, scared, frustrated and even a little bit dumb. But that's part of the parcel of learning anything.
+
+You're not going to know how to do something until you've done it at least once.
+
+You won't know how to build a web based calendar component, you won't know how to build a search base API, you wont' know how a lot of things.
+
+There's no manual, there's great resources online but there won't be for everything.
+
+You have to be comfortable being uncomfortable in order to grow.
+
+The majority of software and programming is problem solving. You'll need to accept not knowing and instead break problems down until you can solve it.
+
+### Bonus tip! 31. Keep working on the fundamentals, avoid shiny framework syndrome
+
+AI is everywhere as of the writing of this. People think traditional coding will die off. It might. But that time is not now.
+
+Learning the fundamentals will always serve you well in the long run.
+
+If you understand code at a deep level and understand the fundamentals of software engineering then you'll be able to adapt to any language, any framework, any tool and keep moving forward.
+
+There's a great quote from Kobe Bryant that says "I never get bored with the basics". The best in the world at anything all master the basics, the fundamentals.
+
+<blockquote class="twitter-tweet">
+  <p lang="en" dir="ltr">
+    Kobe on mastering the basics: <br />
+    <br />
+    “Kobe was going through an intense warm up before his scheduled workout
+    started with his trainer. <br />
+    <br />I sat down to watch.
+    <br />
+    <br />
+    For the first 45 minutes I was actually shocked. <br />
+    <br />
+    For the first 45 minutes I watched the best player in the world do the most…{" "}
+    <a href="https://t.co/sxQc1rNnJX">pic.twitter.com/sxQc1rNnJX</a>
+  </p>
+  &mdash; David Senra (@FoundersPodcast){" "}
+  <a href="https://twitter.com/FoundersPodcast/status/1765886385897021472?ref_src=twsrc%5Etfw">
+    March 7, 2024
+  </a>
+</blockquote> <script
+  async
+  src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"
+></script>
+
+It's not fancy tricks and complex skills they know that make them the best. It's mastering the fundamentals. That means they can adapt to any situation and stay consistently on top.
+
+Don't follow the next shiny framework that comes along just because.
+
+Do it for fun if you wish but don't drop everything else in place of it.
+
+Keep working on the fundamentals.
+
+### Thanks for reading
+
+Hopefully you can learn from my mistakes and save yourself some time. Some of these tips and truths I only learned late into the game.
+
+These are just my experiences, of course you're going to make mistakes and so you should but save yourself a little bit of pain and make the journey of programming a little more time friendly.
+
+Thanks again 🙏
